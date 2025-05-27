@@ -27,7 +27,7 @@ const ThemeButton = () => {
   }
 
   return (
-    <Box>
+ <>
       {/* Theme Switch Button */}
       <Icons
         onClick={handleClick}
@@ -71,7 +71,7 @@ const ThemeButton = () => {
           );
         })}
       </Menu>
-    </Box>
+    </>
   );
 };
 
