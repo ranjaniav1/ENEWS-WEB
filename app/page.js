@@ -11,6 +11,7 @@ import Technology from "./components/sections/Technology";
 import Travels from "./components/sections/Travels";
 import LazyComponent from "./components/shared/LazyComponent";
 import { useThemeContext } from "./context/ThemeContext";
+import Link from "next/link";
 
 export default function Home() {
   const { themeData } = useThemeContext();
@@ -29,7 +30,10 @@ export default function Home() {
         />
       </Head>
 
-      <Banner/>
+      <Banner />
+      <Link href="/drawing" className="text-lg font-bold">
+        🎨 Drawing
+      </Link>
 
       <div className="hidden md:block">
         <Heading
@@ -62,7 +66,7 @@ export default function Home() {
         link="/categories-news/travel"
       />
       <LazyComponent component={Travels} />
-      <Banner/>
+      <Banner />
       <Heading
         title={"Breaking News"}
         subtitle={"Breaking News Here"}
