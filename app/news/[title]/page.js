@@ -35,10 +35,25 @@ const NewsDetailPage = () => {
             <NewsHeader article={clickedArticle} />
             <NewsIcons article={clickedArticle} title={title} />
             <NewsContent article={clickedArticle} />
+            {/* ✅ Display Banner Ad (1200x90) after content */}
+            <div className="my-4 flex justify-center">
+              <GoogleAd
+                adSlot="1338579894"
+                style={{ display: "inline-block", width: 1200, height: 90 }}
+              />
+            </div>
           </Grid>
           {/* Right Side - Display Related Articles */}
           <Grid item xs={12} md={4}>
             <RelatedNews articles={relatedArticles} />
+            {/* ✅ Optional: Multiplex Ad below related news */}
+            <div className="mt-6">
+              <GoogleAd
+                adSlot="2424100318"
+                style={{ display: "block" }}
+                format="autorelaxed"
+              />
+            </div>
           </Grid>
         </Grid>
       </Container>

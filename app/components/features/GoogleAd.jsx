@@ -1,27 +1,35 @@
 "use client";
-import { useEffect } from "react";
 
-const GoogleAd = () => {
+import React, { useEffect, useRef } from "react";
+
+
+
+const GoogleAd = ({ adSlot, style, format }) => {
+  const adRef = useRef(null);
+
   useEffect(() => {
-    console.log("GoogleAd mounted");
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-      console.log("Ad pushed");
+      // Ensure adsbygoogle is available
+      if (typeof window !== "undefined" && (window.adsbygoogle = window.adsbygoogle || [])) {
+        window.adsbygoogle.push({});
+      }
     } catch (e) {
-      console.error("Adsbygoogle error:", e);
+      console.error("Adsense error", e);
     }
   }, []);
 
-
   return (
-    <ins
+    <>
+      {/* Include AdSense script only once in _app.tsx or root layout */}
+      <ins
         className="adsbygoogle"
-        style={{ display: "block", width: "100%", height: "90px" }}
+        style={style || { display: "block" }}
         data-ad-client="ca-pub-6580779703282784"
-        data-ad-slot="1338579894"
-        data-ad-format="horizontal"
-        data-full-width-responsive="true"
-      />
+        data-ad-slot={adSlot}
+        data-ad-format={format || undefined}
+        ref={adRef}
+      ></ins>
+    </>
   );
 };
 
