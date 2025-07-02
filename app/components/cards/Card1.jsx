@@ -23,7 +23,7 @@ const Card1 = ({
     <div
       className="relative overflow-hidden group  rounded-lg shadow-lg mb-4 cursor-pointer bg-gradient-to-t from-black to-transparent"
       style={{
-        height: height || "300px",
+        height: height,
         width: width || "100%",
         marginBottom,
       }}
