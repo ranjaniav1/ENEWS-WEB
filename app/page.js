@@ -42,8 +42,8 @@ export default function Home() {
       <div className="hidden md:block">
         <Heading
           title={"Popular News"}
-          subtitle={"Popular News Here"}
-          buttonText={"View More Popular News"}
+          subtitle="Top trending stories everyone is reading"
+          buttonText="Browse Popular Stories"
           link="/categories-news/popular"
         />
       </div>
@@ -51,30 +51,30 @@ export default function Home() {
       <LazyComponent component={PopularCards} />
       <Heading
         title={"Recent News"}
-        subtitle={"Recent News Here"}
-        buttonText={"View More Recent News"}
+        subtitle="Latest headlines and daily updates"
+        buttonText="Catch Up on Recent News"
         link="/categories-news/recent"
       />
       <LazyComponent component={RecentNews} />
       <Heading
         title={"Technology"}
-        subtitle={"Tech News Here"}
-        buttonText={"View More Technology News"}
+        subtitle="Stay ahead with innovations and gadgets"
+        buttonText="Explore Tech Innovations"
         link="/categories-news/technology"
       />
       <LazyComponent component={Technology} />
       <Heading
         title={"Travels"}
-        subtitle={"Travels"}
-        buttonText={"View More Travel News"}
+        subtitle="Wanderlust stories, tips & destinations"
+        buttonText="Discover Travel Articles"
         link="/categories-news/travel"
       />
       <LazyComponent component={Travels} />
       <Banner />
       <Heading
         title={"Breaking News"}
-        subtitle={"Breaking News Here"}
-        buttonText={"View More Breaking News"}
+        subtitle="Urgent updates as events unfold"
+        buttonText={"Stay Updated on Breaking News"}
         link="/categories-news/breaking"
       />
       <LazyComponent component={BreakingNews} />
