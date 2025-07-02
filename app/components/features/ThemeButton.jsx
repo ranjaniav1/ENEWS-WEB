@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Menu, MenuItem, Box } from "@mui/material";
-import { PaletteOutlined } from "@mui/icons-material";
+import { ColorLensOutlined } from "@mui/icons-material";
 import { useThemeContext } from "@/app/context/ThemeContext";
 import Icons from "../shared/Icons";
 
@@ -31,7 +31,7 @@ const ThemeButton = () => {
       {/* Theme Switch Button */}
       <Icons
         onClick={handleClick}
-        icon={<PaletteOutlined sx={{ color: themeData?.icon?.default }} />}
+        icon={<ColorLensOutlined sx={{ color: themeData?.icon?.default }} />}
         sx={{
 
           background: themeData?.icon?.default,

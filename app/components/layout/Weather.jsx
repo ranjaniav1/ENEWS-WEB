@@ -11,9 +11,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Icons from "../shared/Icons";
 import ThemeButton from "../features/ThemeButton";
 import { useThemeContext } from "@/app/context/ThemeContext";
+import Link from "next/link";
 
 const Weather = () => {
-  const { themeData,config } = useThemeContext();
+  const { themeData, config } = useThemeContext();
   const getCurrentDate = () => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date().toLocaleDateString(undefined, options);
@@ -45,7 +46,7 @@ const Weather = () => {
             color: themeData?.text?.button || "#ffffff",
             textShadow: "1px 1px 2px rgba(0, 0, 0, 0.7)",
             fontWeight: "bold",
-            borderRadius:config?.borderRadius,
+            borderRadius: config?.borderRadius,
             fontSize: "small",
             padding: "3px",
           }}
@@ -56,30 +57,32 @@ const Weather = () => {
 
         {/* Right Side - Social Icons */}
         <div style={{ alignItems: "center" }} className="flex gap-2">
-
+          {/* <Link href="/drawing" className="text-lg font-bold">
+            🎨 
+          </Link> */}
           <ThemeButton />
-          <Icons 
-            icon={<GitHubIcon sx={{color: themeData.icon?.default}}/>}
+          <Icons
+            icon={<GitHubIcon sx={{ color: themeData.icon?.default }} />}
             href="https://github.com/varsani2520/"
             ariaLabel="Visit our GitHub page"
           />
-          <Icons 
-            icon={<FacebookIcon sx={{color: themeData.icon?.default}}/>}
+          <Icons
+            icon={<FacebookIcon sx={{ color: themeData.icon?.default }} />}
             href="https://www.facebook.com"
             ariaLabel="Visit our Facebook page"
           />
-          <Icons 
-            icon={<TwitterIcon sx={{color: themeData.icon?.default}}/>}
+          <Icons
+            icon={<TwitterIcon sx={{ color: themeData.icon?.default }} />}
             href="https://x.com/RanjaniVar61457"
             ariaLabel="Visit our Twitter page"
           />
-          <Icons 
-            icon={<LinkedInIcon sx={{color: themeData.icon?.default}}/>}
+          <Icons
+            icon={<LinkedInIcon sx={{ color: themeData.icon?.default }} />}
             href="https://www.linkedin.com/in/ranjani-varsani-45a875225/"
             ariaLabel="Visit our LinkedIn profile"
           />
-          <Icons 
-            icon={<InstagramIcon sx={{color: themeData.icon?.default}}/>}
+          <Icons
+            icon={<InstagramIcon sx={{ color: themeData.icon?.default }} />}
             href="https://www.instagram.com/varsaniranjani/"
             ariaLabel="Visit our Instagram page"
           />
