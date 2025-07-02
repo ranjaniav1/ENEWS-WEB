@@ -21,16 +21,53 @@ export default function Home() {
 
   return (
     <main className="flex flex-col justify-between" style={{ background: themeData?.background }}>
-      <Head>
-        <title>Enews - Latest news & Updates</title>
-        <meta
-          name="description"
-          content="Stay informed with Enews. Get the latest updates on popular, recent, tech, travel, and breaking news, 24/7."
-        />
-      </Head>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Stay informed with Enews – your source for the latest updates and trending news." />
+
+        {/* ✅ Keywords */}
+        <meta name="keywords" content="latest news, trending news, breaking news, Enews, technology news, travel updates" />
+
+        {/* ✅ Canonical URL */}
+        <link rel="canonical" href="https://enews-varsani.vercel.app/" />
+
+        {/* ✅ Robots tag */}
+        <meta name="robots" content="index, follow" />
+
+        {/* ✅ Author and Publisher */}
+        <meta name="author" content="Varsani Ranjani" />
+        <meta name="publisher" content="Enews" />
+
+        {/* ✅ Open Graph for sharing */}
+        <meta property="og:title" content="Enews - Latest News & Updates" />
+        <meta property="og:description" content="Stay informed with Enews – your source for the latest updates and trending news." />
+        <meta property="og:url" content="https://enews-varsani.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://enews-varsani.vercel.app/og-image.jpg" />  {/* Replace with your actual image */}
+
+        {/* ✅ Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Enews - Latest News & Updates" />
+        <meta name="twitter:description" content="Get the latest trending news with Enews." />
+        <meta name="twitter:image" content="https://enews-varsani.vercel.app/og-image.jpg" />
+
+        {/* ✅ Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* ✅ AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6580779703282784"
+          crossOrigin="anonymous"
+        ></script>
+
+        <title>Enews - Latest News & Updates</title>
+      </head>
+
 
       <Banner />
-     
+
 
       <div className="hidden md:block">
         <Heading
