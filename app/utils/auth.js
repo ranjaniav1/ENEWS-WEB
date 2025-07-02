@@ -24,7 +24,6 @@ export const loginWithEmail = async (userData) => {
   } catch (error) {
     console.error("Login error:", error);
     toast.error(error.response?.data?.message || "Login failed ❌");
-    toastShown = false;  // Reset flag in case login fails
     throw error;
   }
 };
