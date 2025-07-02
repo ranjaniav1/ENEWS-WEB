@@ -11,6 +11,7 @@ import Technology from "./components/sections/Technology";
 import Travels from "./components/sections/Travels";
 import LazyComponent from "./components/shared/LazyComponent";
 import { useThemeContext } from "./context/ThemeContext";
+import GoogleAd from "./components/features/GoogleAd";
 
 export default function Home() {
   const { themeData } = useThemeContext();
@@ -22,35 +23,22 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-between" style={{ background: themeData?.background }}>
       <Head>
-        <title>Enews - Latest News & Updates</title>
-        <meta name="description" content="Stay informed with Enews – your source for the latest updates and trending news." />
-        <meta name="keywords" content="latest news, trending news, breaking news, Enews, technology news, travel updates" />
-        <meta name="author" content="Varsani Ranjani" />
-        <meta name="publisher" content="Enews" />
-        <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="50L3twObn6mAQFc3lcnWjGG9Urb1r-fS7ZOVlTL66nA" />
-        <link rel="canonical" href="https://enews-varsani.vercel.app/" />
-        <meta property="og:title" content="Enews - Latest News & Updates" />
-        <meta property="og:description" content="Stay informed with Enews – your source for the latest updates and trending news." />
-        <meta property="og:url" content="https://enews-varsani.vercel.app/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://enews-varsani.vercel.app/og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Enews - Latest News & Updates" />
-        <meta name="twitter:description" content="Get the latest trending news with Enews." />
-        <meta name="twitter:image" content="https://enews-varsani.vercel.app/og-image.jpg" />
-        <link rel="icon" href="/favicon.ico" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6580779703282784"
-          crossOrigin="anonymous"
-        ></script>
+        <title>Enews - Latest news & Updates</title>
+        <meta
+          name="description"
+          content="Stay informed with Enews. Get the latest updates on popular, recent, tech, travel, and breaking news, 24/7."
+        />
       </Head>
-
 
       <Banner />
 
-
+      {/* ✅ Display Ad Banner (1200x90) */}
+      <div className="my-6 flex justify-center">
+        <GoogleAd
+          adSlot="1338579894"
+          style={{ display: "inline-block", width: 1200, height: 90 }}
+        />
+      </div>
       <div className="hidden md:block">
         <Heading
           title={"Popular News"}
