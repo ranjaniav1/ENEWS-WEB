@@ -32,12 +32,6 @@ export default function Home() {
 
       <Banner />
 
-      {/* ✅ Display Ad Banner (1200x90) */}
-      <div className="my-6 flex justify-center">
-        <GoogleAd
-          adSlot="1338579894"
-          style={{ display: "inline-block", width: 1200, height: 90 }}
-        />
       </div>
       <div className="hidden md:block">
         <Heading
