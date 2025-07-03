@@ -4,18 +4,18 @@ import GoogleAd from "../features/GoogleAd";
 
 const Banner = () => {
   return (
-   
-      <div className="w-full max-w-[1200px] h-[90px] mx-auto flex justify-center items-center rounded-lg overflow-hidden shadow-lg bg-white">
+    <div className="w-full flex justify-center py-4">
+      <div className="w-[1200px] h-[90px] flex items-center justify-center rounded-lg overflow-hidden shadow-lg">
         <GoogleAd
           adSlot="1338579894"
           style={{
-            display: "block",
-            width: "100%",
+            display: "inline-block",
+            width: 1200,
             height: 90,
           }}
         />
       </div>
-  
+    </div>
   );
 };
 
