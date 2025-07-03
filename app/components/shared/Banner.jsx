@@ -18,7 +18,10 @@ const Banner = ({ title, href }) => {
       sx={{ display: { xs: "none", sm: "none", md: "block" },height:"90px",width:"1200px"}}
     >
       <div className="w-full h-full rounded-lg overflow-hidden shadow-lg">
-        <GoogleAd />
+        <GoogleAd
+                 adSlot="1338579894"
+                 style={{ display: "inline-block", width: 1200, height: 90 }}
+               />
       </div>
     </Container>
 
