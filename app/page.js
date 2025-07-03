@@ -11,7 +11,6 @@ import Technology from "./components/sections/Technology";
 import Travels from "./components/sections/Travels";
 import LazyComponent from "./components/shared/LazyComponent";
 import { useThemeContext } from "./context/ThemeContext";
-import GoogleAd from "./components/features/GoogleAd";
 
 export default function Home() {
   const { themeData } = useThemeContext();
@@ -32,7 +31,7 @@ export default function Home() {
 
       <Banner />
 
-      </div>
+      
       <div className="hidden md:block">
         <Heading
           title={"Popular News"}
