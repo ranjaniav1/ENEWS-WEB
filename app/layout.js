@@ -9,7 +9,7 @@ import { CssBaseline } from "@mui/material";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { HomeProvider } from "./utils/useHome";
 import { AuthProvider } from "./context/AuthContext";
-
+import {Analytics} from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
@@ -43,6 +43,8 @@ export default function RootLayout({ children }) {
             </HomeProvider>
           </ThemeProvider>
         </AuthProvider>
+        {/* vercel analytics */}
+        <Analytics />
       </body>
     </html>
   );
