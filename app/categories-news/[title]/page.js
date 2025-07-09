@@ -35,14 +35,7 @@ const CategoryPage = () => {
         <meta name="description" content={pageDescription} />
       </Head>
 
-      <Breadcumps heading={title} />
-      {/* ✅ Ad Section */}
-      <div className="my-6 flex justify-center">
-        <GoogleAd
-          adSlot={ADS.HOME_TOP_BANNER} // ✅ Display Banner slot
-          style={{ display: "inline-block", width: "100%", height: 90 }}
-        />
-      </div>
+    
       <Container maxWidth="xl" sx={{ py: 4 }}>
         {loading ? (
           <TravelSkeleton />
@@ -87,22 +80,10 @@ const CategoryPage = () => {
           </Grid>
         )}
       </Container>
-      {/* 🟧 Bottom Multiplex Ad */}
-      <div className="my-10 flex justify-center">
-        <GoogleAd
-          adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
-          style={{
-            display: "block",
-            textAlign: "center",
-            marginTop: "50px",
-            width: "100%",
-            maxWidth: "728px",
-          }}
-          format="autorelaxed"
-        />
+     
       </div>
 
-    </div >
+    
   );
 };
 
