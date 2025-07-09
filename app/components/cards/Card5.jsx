@@ -3,6 +3,7 @@ import { useArticleLikes } from "@/app/hooks/useArticleLikes";
 // import { addHandleArticleClick } from "@/app/hooks/useArticleClick";
 import FavoriteButton from "@/app/components/features/FavouriteButton";
 import { useThemeContext } from "@/app/context/ThemeContext";
+import { truncateText } from "@/app/utils/textUtils";
 
 const Card5 = ({ category, title, imageUrl, article, height }) => {
   const { themeData } = useThemeContext();
@@ -52,7 +53,7 @@ const Card5 = ({ category, title, imageUrl, article, height }) => {
       <h2
         className="text-sm md:text-lg font-semibold mb-2 group-hover:text-red-500 transition-colors duration-300"
         style={{ color: themeData?.text?.primary }}>
-        {title}
+        {truncateText(title,60)}
       </h2>
     </div>
   );

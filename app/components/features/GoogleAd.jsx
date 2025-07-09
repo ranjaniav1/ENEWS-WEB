@@ -2,16 +2,16 @@
 
 import React, { useEffect, useRef } from "react";
 
-
-
 const GoogleAd = ({ adSlot, style, format }) => {
   const adRef = useRef(null);
 
   useEffect(() => {
+    if (!adRef.current) return;
+
     try {
-      // Ensure adsbygoogle is available
-      if (typeof window !== "undefined" && (window.adsbygoogle = window.adsbygoogle || [])) {
-        window.adsbygoogle.push({});
+      // Check if ad content is already rendered to avoid duplicate push
+      if (adRef.current.innerHTML.trim().length === 0) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       }
     } catch (e) {
       console.error("Adsense error", e);
@@ -19,17 +19,15 @@ const GoogleAd = ({ adSlot, style, format }) => {
   }, []);
 
   return (
-    <>
-      {/* Include AdSense script only once in _app.tsx or root layout */}
-      <ins
-        className="adsbygoogle"
-        style={style || { display: "block" }}
-        data-ad-client="ca-pub-6580779703282784"
-        data-ad-slot={adSlot}
-        data-ad-format={format || undefined}
-        ref={adRef}
-      ></ins>
-    </>
+    <ins
+      className="adsbygoogle"
+      style={style || { display: "block" }}
+      data-ad-client="ca-pub-6580779703282784"
+      data-ad-slot={adSlot}
+      data-ad-format={format || "auto"}
+      data-full-width-responsive="true"
+      ref={adRef}
+    />
   );
 };
 

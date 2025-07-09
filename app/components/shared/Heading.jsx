@@ -15,8 +15,9 @@ const Heading = ({ title, subtitle, buttonText, link }) => {
       <Box
         sx={{
           display: "flex",
+          flexDirection:{xs:"column",sm:"row"},
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: {xs:"flex-start",sm:"center"},
           padding: "16px 0",
 
         }}
@@ -39,6 +40,7 @@ const Heading = ({ title, subtitle, buttonText, link }) => {
             fontWeight: "bold",
             color: themeData?.text?.primary,
             borderColor: themeData?.text?.secondary,
+            alignSelf:{xs:"flex-start",sm:"auto"}
           }}
           onClick={handleClick}
         >
