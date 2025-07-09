@@ -15,7 +15,7 @@ export const useSingleArticles = (slug) => {
         const fetchSingleArticle = async () => {
             try {
                 const response = await getSingleArticle(slug);
-                console.log("single", response.article)
+
                 setArticle(response.article);
                 setRelatedArticles(response.relatedArticles)
             } catch (error) {

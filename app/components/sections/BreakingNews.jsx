@@ -36,7 +36,7 @@ const BreakingNews = () => {
                 >
                   <Card5
                     article={article}
-                    category={article.category.name}
+                    category={article.category?.name}
                     title={article.title}
                     imageUrl={article.image_url}
                     height="h-[250px] sm:h-[300px]"
