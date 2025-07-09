@@ -59,7 +59,7 @@ const CategoryPage = () => {
                   passHref
                 >
                   <Card5
-                    category={articleItem.category.name}
+                    category={articleItem.category?.name}
                     title={articleItem.title}
                     imageUrl={articleItem.image_url}
                     article={articleItem}

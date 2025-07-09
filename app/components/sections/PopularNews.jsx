@@ -27,7 +27,7 @@ const PopularCards = () => {
             <Link key={index} href={`/news/${article.slug}`}>
               <Card1
                 article={article}
-                category={article.category.name}
+                category={article.category?.name}
                 title={article.title}
                 imageUrl={article.image_url}
                 height="h-[191px] sm:h-[300px]"
@@ -42,7 +42,7 @@ const PopularCards = () => {
             <div className="flex flex-col min-h-[191px]">
               <Card1
                 article={articles[2]}
-                category={articles[2].category.name}
+                category={articles[2].category?.name}
                 title={articles[2].title}
                 imageUrl={articles[2].image_url}
                 height="h-[400px] sm:h-[300px]"
@@ -57,7 +57,7 @@ const PopularCards = () => {
             <Link key={index} href={`/news/${article.slug}`}>
               <Card1
                 article={article}
-                category={article.category.name}
+                category={article.category?.name}
                 title={article.title}
                 imageUrl={article.image_url}
                 height="h-[191px] sm:h-[300px]"

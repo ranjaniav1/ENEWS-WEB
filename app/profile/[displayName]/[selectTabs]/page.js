@@ -21,7 +21,7 @@ const SelectedTabs = () => {
     phoneNumber: user?.phone_no || "",
     avatar: null, // Handle avatar file
   });
-  console.log("jdh", user);
+ 
 
   useEffect(() => {
     document.title = `Enews - ${selectTabs?.charAt(0).toUpperCase() + selectTabs?.slice(1)}`;
