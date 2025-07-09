@@ -52,7 +52,7 @@ const CategoryPage = () => {
           </Typography>
         ) : (
           <Grid container spacing={2}>
-            {article.map((articleItem) => (
+            {article.map((articleItem,index) => (
               < React.Fragment key={articleItem._id}>
                 <Grid item xs={12} sm={6} md={3}>
                   <Link
