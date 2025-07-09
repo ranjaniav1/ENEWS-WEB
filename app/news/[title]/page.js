@@ -11,6 +11,7 @@ import CommentsDrawer from "@/app/components/news-detail/CommentDrawer";
 import NewsContent from "@/app/components/news-detail/NewsContent";
 import GoogleAd from "@/app/components/features/GoogleAd";
 import { useSingleArticles } from "@/app/utils/useSingleArticle";
+import { ADS } from "@/app/utils/adConfig";
 
 const NewsDetailPage = () => {
   const { title } = useParams();
@@ -38,8 +39,9 @@ const NewsDetailPage = () => {
             {/* ✅ Display Banner Ad (1200x90) after content */}
             <div className="my-4 flex justify-center">
               <GoogleAd
-                adSlot="1338579894"
-                style={{ display: "inline-block", width: 1200, height: 90 }}
+                adSlot={ADS.NEWS_DETAIL_DISPLAY}
+                style={{ display: "inline-block", width: "100%", height: 90 }}
+                format="auto"
               />
             </div>
           </Grid>
@@ -49,7 +51,7 @@ const NewsDetailPage = () => {
             {/* ✅ Optional: Multiplex Ad below related news */}
             <div className="mt-6">
               <GoogleAd
-                adSlot="2424100318"
+                adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
                 style={{ display: "block" }}
                 format="autorelaxed"
               />

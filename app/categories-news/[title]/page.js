@@ -11,6 +11,7 @@ import Breadcumps from "@/app/components/shared/Breadcrumbs";
 import { useThemeContext } from "@/app/context/ThemeContext";
 import { useArticleCollection } from "@/app/utils/useArticleCollection";
 import GoogleAd from "@/app/components/features/GoogleAd";
+import { ADS } from "@/app/utils/adConfig";
 
 const CategoryPage = () => {
   const { title } = useParams();
@@ -38,8 +39,8 @@ const CategoryPage = () => {
       {/* ✅ Ad Section */}
       <div className="my-6 flex justify-center">
         <GoogleAd
-          adSlot="1338579894" // ✅ Display Banner slot
-          style={{ display: "inline-block", width: 1200, height: 90 }}
+          adSlot={ADS.HOME_TOP_BANNER} // ✅ Display Banner slot
+          style={{ display: "inline-block", width: "100%", height: 90 }}
         />
       </div>
       <Container maxWidth="xl" sx={{ py: 4 }}>
@@ -52,26 +53,56 @@ const CategoryPage = () => {
         ) : (
           <Grid container spacing={2}>
             {article.map((articleItem) => (
-              <Grid item key={articleItem._id} xs={12} sm={6} md={3}>
-                <Link
-                  href={`/news/${articleItem.slug}`}
-                  aria-label={`Read article: ${articleItem.title}`}
-                  passHref
-                >
-                  <Card5
-                    category={articleItem.category?.name}
-                    title={articleItem.title}
-                    imageUrl={articleItem.image_url}
-                    article={articleItem}
-                    height="250px"
-                  />
-                </Link>
-              </Grid>
+              < React.Fragment key={articleItem._id}>
+                <Grid item xs={12} sm={6} md={3}>
+                  <Link
+                    href={`/news/${articleItem.slug}`}
+                    aria-label={`Read article: ${articleItem.title}`}
+                    passHref
+                  >
+                    <Card5
+                      category={articleItem.category?.name}
+                      title={articleItem.title}
+                      imageUrl={articleItem.image_url}
+                      article={articleItem}
+                      height="250px"
+                    />
+                  </Link>
+                </Grid>
+                {index > 0 && index % 4 === 0 && (
+                  <Grid item xs={12}>
+                    <GoogleAd
+                      adSlot={ADS.SECTION_BREAK_DISPLAY}
+                      style={{
+                        display: "block",
+                        textAlign: "center",
+                        margin: "30px 0",
+                      }}
+                      format="fluid"
+                    />
+                  </Grid>
+                )}
+              </React.Fragment>
             ))}
           </Grid>
         )}
       </Container>
-    </div>
+      {/* 🟧 Bottom Multiplex Ad */}
+      <div className="my-10 flex justify-center">
+        <GoogleAd
+          adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
+          style={{
+            display: "block",
+            textAlign: "center",
+            marginTop: "50px",
+            width: "100%",
+            maxWidth: "728px",
+          }}
+          format="autorelaxed"
+        />
+      </div>
+
+    </div >
   );
 };
 

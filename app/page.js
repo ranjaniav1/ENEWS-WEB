@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import BreakingNews from "./components/sections/BreakingNews";
-import Banner from "./components/shared/Banner";
 import Heading from "./components/shared/Heading";
 import PopularCards from "./components/sections/PopularNews";
 import RecentNews from "./components/sections/RecentNews";
@@ -11,6 +10,8 @@ import Technology from "./components/sections/Technology";
 import Travels from "./components/sections/Travels";
 import LazyComponent from "./components/shared/LazyComponent";
 import { useThemeContext } from "./context/ThemeContext";
+import GoogleAd from "./components/features/GoogleAd";
+import { ADS } from "./utils/adConfig";
 
 export default function Home() {
   const { themeData } = useThemeContext();
@@ -29,9 +30,17 @@ export default function Home() {
         />
       </Head>
 
-      <Banner />
+      <GoogleAd
+        adSlot={ADS.HOME_TOP_BANNER}
+        style={{
+          display: "block",
+          width: "100%",
+          height: 90,
+          textAlign: "center",
+        }}
+      />
 
-      
+
       <div className="hidden md:block">
         <Heading
           title={"Popular News"}
@@ -56,6 +65,18 @@ export default function Home() {
         link="/categories-news/technology"
       />
       <LazyComponent component={Technology} />
+
+      <GoogleAd
+        adSlot={ADS.SECTION_BREAK_DISPLAY}
+        style={{
+          display: "block",
+          textAlign: "center",
+          margin: "40px auto",
+          width: "100%",
+          maxWidth: "728px",
+        }}
+        format="auto"
+      />
       <Heading
         title={"Travels"}
         subtitle="Wanderlust stories, tips & destinations"
@@ -63,7 +84,7 @@ export default function Home() {
         link="/categories-news/travel"
       />
       <LazyComponent component={Travels} />
-      <Banner />
+     
       <Heading
         title={"Breaking News"}
         subtitle="Urgent updates as events unfold"
