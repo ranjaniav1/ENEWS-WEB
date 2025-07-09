@@ -25,7 +25,7 @@ const BreakingNews = () => {
 
 
   return (
-    <Container maxWidth="xl" sx={{ marginBottom: "5%" }}>
+    <Container maxWidth="xl" >
       <NewsSlider slidesToShow={4}>
         {articles.map((article, index) => (
           <Box key={index} px={1}>
