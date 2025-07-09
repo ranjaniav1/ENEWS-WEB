@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import BreakingNews from "./components/sections/BreakingNews";
-import Banner from "./components/shared/Banner";
 import Heading from "./components/shared/Heading";
 import PopularCards from "./components/sections/PopularNews";
 import RecentNews from "./components/sections/RecentNews";
@@ -85,7 +84,7 @@ export default function Home() {
         link="/categories-news/travel"
       />
       <LazyComponent component={Travels} />
-      <Banner />
+     
       <Heading
         title={"Breaking News"}
         subtitle="Urgent updates as events unfold"
