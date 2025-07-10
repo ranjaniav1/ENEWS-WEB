@@ -30,10 +30,18 @@ const RelatedNews = ({ articles }) => {
         ) : (
           <p className="text-gray-500 text-center">No related articles found.</p>
         )}
+      </div>
+      {/* Vertical Ad below articles */}
+      <div className="mt-6">
         <GoogleAd
           adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
-          style={{ display: "block" }}
-          format="autorelaxed"
+          style={{
+            display: "block",
+            width: "100%",
+            height: "auto",
+            textAlign: "center",
+          }}
+          format="autorelaxed" // Good for vertical multiplex ad
         />
       </div>
     </div>
