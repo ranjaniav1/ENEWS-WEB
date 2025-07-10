@@ -27,24 +27,22 @@ const BreakingNews = () => {
   return (
     <Container maxWidth="xl" >
       <NewsSlider slidesToShow={4}>
-        {articles.map((article, index) => (
-          <Box key={index} px={1}>
-            <Grid container spacing={2} justifyContent="center">
-              <Grid item xs={12}>
-                <Link
-                  href={`/news/${article?.slug}`}
-                >
-                  <Card5
-                    article={article}
-                    category={article.category?.name}
-                    title={article.title}
-                    imageUrl={article.image_url}
-                    height="h-[250px] sm:h-[300px]"
-                  />
-                </Link>
-              </Grid>
+        {articles.map((article) => (
+          <Grid container spacing={2} justifyContent="center" key={article._id}>
+            <Grid item xs={12}>
+              <Link
+                href={`/news/${article?.slug}`}
+              >
+                <Card5
+                  article={article}
+                  category={article.category?.name}
+                  title={article.title}
+                  imageUrl={article.image_url}
+                  className="h-[250px]"
+                />
+              </Link>
             </Grid>
-          </Box>
+          </Grid>
         ))}
       </NewsSlider>
     </Container>

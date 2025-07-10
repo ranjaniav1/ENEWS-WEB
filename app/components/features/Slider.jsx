@@ -12,7 +12,7 @@ const NewsSlider = ({ children, slidesToShow = 4 }) => {
   return (
     <Swiper
       modules={[Autoplay]}
-      spaceBetween={20}
+      spaceBetween={10}
       slidesPerView={slidesToShow}
       autoplay={{ delay: 5000 }}
       loop={true}

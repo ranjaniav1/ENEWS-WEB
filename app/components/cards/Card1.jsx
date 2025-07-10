@@ -6,7 +6,7 @@ import { useThemeContext } from "@/app/context/ThemeContext";
 import { truncateText } from "@/app/utils/textUtils";
 
 const Card1 = ({
-  height,
+  className="",
   width,
   marginBottom,
   article,
@@ -21,9 +21,8 @@ const Card1 = ({
 
   return (
     <div
-      className="relative overflow-hidden group  rounded-lg shadow-lg cursor-pointer bg-gradient-to-t from-black to-transparent"
+      className={`relative overflow-hidden group rounded-lg shadow-lg cursor-pointer bg-gradient-to-t from-black to-transparent ${className}`}
       style={{
-        height: height,
         width: width || "100%",
         marginBottom,
       }}

@@ -7,30 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 @keyframes scroll {
   0% {
     transform: translateX(100%);
@@ -43,7 +20,7 @@ body {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
-.hover\:pause-scroll:hover{
+.hover\:pause-scroll:hover {
   animation-play-state: paused;
 }
 
@@ -61,6 +38,10 @@ body {
 }
 
 /* Optional: Prevent unwanted scrollbars */
-html, body {
+html,
+body {
   overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

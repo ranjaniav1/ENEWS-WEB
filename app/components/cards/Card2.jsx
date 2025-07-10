@@ -20,7 +20,7 @@ const Card2 = ({ category, title, imageUrl, height, width, article }) => {
 
   return (
     <div
-      className="relative overflow-hidden rounded-lg shadow-lg mb-4 group cursor-pointer"
+      className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer"
       style={{ height: height || "300px", width: width || "100%" }}
       // onClick={() => addHandleArticleClick(article)}
     >

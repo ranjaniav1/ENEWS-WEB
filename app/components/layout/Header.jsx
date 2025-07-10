@@ -29,7 +29,7 @@ const Header = () => {
     <>
       {/* Global loading spinner (shows in center) */}
       {loading && (
-        <div className="fixed inset-0 flex items-center justify-center bg-white/70 z-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50">
           <Loading />
         </div>
       )}
