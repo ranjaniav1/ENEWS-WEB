@@ -38,7 +38,7 @@ const RelatedNews = ({ articles }) => {
         <GoogleAd
           adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
           style={{
-            display: showAd ? "block" : "none",
+            display: "block",
             width: "100%",
             height: "auto",
             textAlign: "center",
