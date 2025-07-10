@@ -34,7 +34,7 @@ const RelatedNews = ({ articles }) => {
       </div>
       {/* Vertical Ad below articles */}
 
-     {showAd && <div className="mt-6">
+      <div className="mt-6">
         <GoogleAd
           adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
           style={{
@@ -44,9 +44,8 @@ const RelatedNews = ({ articles }) => {
             textAlign: "center",
           }}
           format="autorelaxed"
-          onLoad={(loaded) => setShowAd(loaded)}
         />
-      </div>}
+      </div>
 
     </div>
   );
