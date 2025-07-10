@@ -37,7 +37,7 @@ const NewsContent = ({ article }) => {
           {index === 0 && showAd &&(
             <GoogleAd
               adSlot={ADS.IN_ARTICLE_POPULAR}
-              style={{ display: showAd ? "block" : "none", textAlign: "center", margin: "20px auto" }}
+              style={{ display: "block", textAlign: "center",  margin: "20px auto" }}
               format="fluid" onAdLoad={(loaded) => setShowAd(loaded)}
             />
           )}
