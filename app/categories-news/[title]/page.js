@@ -17,7 +17,6 @@ const CategoryPage = () => {
   const { title } = useParams();
   const { themeData } = useThemeContext();
   const { article, loading } = useArticleCollection(title);
-  const [showAd, setShowAd] = useState(false);
 
   const pageTitle = title ? `Enews - ${title} News` : "Enews - Latest News";
   const pageDescription = title
@@ -37,15 +36,13 @@ const CategoryPage = () => {
       </Head>
 
       <Breadcumps heading={title} />
-      {showAd && (
-        <div className="flex justify-center my-2">
-          <GoogleAd
-            adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
-            style={{ display: "block", width: "100%", height: 90 }}
-            onAdLoad={(loaded) => setShowAd(loaded)}
-          />
-        </div>
-      )}
+      <div className="flex justify-center my-2">
+        <GoogleAd
+          adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
+          style={{ display: "block", width: "100%", height: 90 }}
+        />
+      </div>
+
 
       <Container maxWidth="xl" sx={{ py: 4 }}>
         {loading ? (

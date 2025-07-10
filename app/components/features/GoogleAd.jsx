@@ -2,27 +2,20 @@
 
 import { useEffect, useRef } from "react";
 
-const GoogleAd = ({ adSlot, style, format = "auto", onAdLoad }) => {
+const GoogleAd = ({ adSlot, style, format = "auto" }) => {
   const adRef = useRef(null);
 
   useEffect(() => {
-    try {
-      if (typeof window !== "undefined") {
+    if (typeof window !== "undefined") {
+      try {
+        console.log("🔁 Attempting to load AdSense ad...");
         (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-        // Check ad render immediately after pushing
-        requestAnimationFrame(() => {
-          const hasContent = adRef.current?.innerHTML.trim().length > 0;
-          if (onAdLoad) {
-            onAdLoad(hasContent);
-          }
-        });
+        console.log("✅ adsbygoogle.push() called for slot:", adSlot);
+      } catch (e) {
+        console.error("❌ AdSense push failed:", e);
       }
-    } catch (e) {
-      console.error("Adsense error", e);
-      if (onAdLoad) onAdLoad(false);
     }
-  }, [adSlot, format, onAdLoad]);
+  }, [adSlot, format]);
 
   return (
     <ins
