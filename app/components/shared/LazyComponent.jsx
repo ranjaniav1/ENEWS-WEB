@@ -23,7 +23,7 @@ const LazyComponent = ({ component: Component }) => {
     return () => observer.disconnect();
   }, []);
 
-  return <div ref={ref} className="my-5">{isVisible ? <Component /> : null}</div>;
+  return <div ref={ref} >{isVisible ? <Component /> : null}</div>;
 };
 
 export default LazyComponent;

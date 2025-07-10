@@ -65,7 +65,7 @@ export default function Home() {
         link="/categories-news/technology"
       />
       <LazyComponent component={Technology} />
-      <div className="my-10 flex justify-center">
+      <div className="flex justify-center">
         <GoogleAd
           adSlot={ADS.SECTION_BREAK_DISPLAY}
           style={{

@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         <title>Enews - Latest News & Updates</title>
       </head>
       <body className={inter.className}>
-        <Toaster />
+        <Toaster position="top-right" toastOptions={{duration:4000,style:{zIndex:9999}}}/>
         <AuthProvider>
           <ThemeProvider>
             <CssBaseline />
