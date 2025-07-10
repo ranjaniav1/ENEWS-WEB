@@ -48,3 +48,19 @@ body {
 }
 
 /** Implementation of new admin panel goes here... */
+
+/* Restrict the toaster area to avoid full-screen spacing */
+#_rht_toaster {
+  inset: unset !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  bottom: auto !important;
+  left: auto !important;
+  pointer-events: none !important;
+  z-index: 9999 !important;
+}
+
+/* Optional: Prevent unwanted scrollbars */
+html, body {
+  overflow-x: hidden;
+}

@@ -48,14 +48,7 @@ const NewsDetailPage = () => {
           {/* Right Side - Display Related Articles */}
           <Grid item xs={12} md={4}>
             <RelatedNews articles={relatedArticles} />
-            {/* ✅ Optional: Multiplex Ad below related news */}
-            <div className="mt-6">
-              <GoogleAd
-                adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
-                style={{ display: "block" }}
-                format="autorelaxed"
-              />
-            </div>
+           
           </Grid>
         </Grid>
       </Container>

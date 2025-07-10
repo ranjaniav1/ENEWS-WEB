@@ -2,15 +2,17 @@ import React from "react";
 import Link from "next/link";
 import Card4 from "@/app/components/cards/Card4";
 import { useThemeContext } from "@/app/context/ThemeContext";
+import GoogleAd from "../features/GoogleAd";
+import { ADS } from "@/app/utils/adConfig";
 
 const RelatedNews = ({ articles }) => {
-  const {themeData}=useThemeContext()
+  const { themeData } = useThemeContext()
   return (
     <div>
       <div className="text-xs md:text-lg font-semibold px-3 py-1 rounded-lg mb-4" style={{
-            backgroundColor: themeData?.background?.button,
-          color: themeData?.text?.button,
-        }}>
+        backgroundColor: themeData?.background?.button,
+        color: themeData?.text?.button,
+      }}>
         Related News
       </div>
       <div className="space-y-4">
@@ -28,6 +30,11 @@ const RelatedNews = ({ articles }) => {
         ) : (
           <p className="text-gray-500 text-center">No related articles found.</p>
         )}
+        <GoogleAd
+          adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
+          style={{ display: "block" }}
+          format="autorelaxed"
+        />
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ const Card1 = ({
 
   return (
     <div
-      className="relative overflow-hidden group  rounded-lg shadow-lg mb-4 cursor-pointer bg-gradient-to-t from-black to-transparent"
+      className="relative overflow-hidden group  rounded-lg shadow-lg cursor-pointer bg-gradient-to-t from-black to-transparent"
       style={{
         height: height,
         width: width || "100%",
@@ -36,7 +36,7 @@ const Card1 = ({
       />
 
       <div
-        className="absolute top-2 left-2  text-xs md:text-lg font-semibold px-3 py-1 rounded-lg"
+        className="absolute top-2 left-2  text-[10px] sm:text-xs md:text-sm  font-semibold px-3 py-0.5 rounded-lg"
         style={{
           backgroundColor: themeData?.background?.button,
           color: themeData?.text?.button,
@@ -47,20 +47,23 @@ const Card1 = ({
 
       <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t px-4 py-2 transition-colors duration-300">
         <h2
-          className="text-sm md:text-lg font-bold group-hover:text-red-500"
+          className="text-[10px] sm:text-xs md:text-sm lg:text-lg font-bold group-hover:text-red-500"
           style={{ color: themeData?.text?.card }}
         >
-          {truncateText(title,60)}
+          {truncateText(title, 60)}
         </h2>
+
       </div>
 
       {/* like button */}
       {showFavourite && (
+        <div className="absolute top-2 right-2 sm:scale-75 md:scale-90">
 
-        <FavoriteButton
-          isFavorite={isArticleFavorite(article?._id)}
-          toggleFavorite={() => toggleFavorite(article?._id)}
-        />
+          <FavoriteButton
+            isFavorite={isArticleFavorite(article?._id)}
+            toggleFavorite={() => toggleFavorite(article?._id)}
+          />
+        </div>
       )}
     </div>
   );

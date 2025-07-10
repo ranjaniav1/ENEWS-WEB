@@ -22,7 +22,7 @@ const PopularCards = () => {
     <Container maxWidth="xl">
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         {/* Left Side Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-1">
+        <div className="grid grid-cols-1 gap-y-2">
           {articles.slice(0, 2).map((article, index) => (
             <Link key={index} href={`/news/${article.slug}`}>
               <Card1
@@ -45,14 +45,14 @@ const PopularCards = () => {
                 category={articles[2].category?.name}
                 title={articles[2].title}
                 imageUrl={articles[2].image_url}
-                height="h-[400px] sm:h-[300px]"
+                height="h-[405px] sm:h-[300px]"
               />
             </div>
           </Link>
         </div>
 
         {/* Right Side Cards */}
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 gap-y-2">
           {articles.slice(3, 5).map((article, index) => (
             <Link key={index} href={`/news/${article.slug}`}>
               <Card1
