@@ -30,16 +30,6 @@ export default function Home() {
         />
       </Head>
 
-      <GoogleAd
-        adSlot={ADS.HOME_TOP_BANNER}
-        style={{
-          display: "block",
-          width: "100%",
-          height: 90,
-          textAlign: "center",
-        }}
-      />
-
 
       <div className="hidden md:block">
         <Heading
@@ -65,18 +55,6 @@ export default function Home() {
         link="/categories-news/technology"
       />
       <LazyComponent component={Technology} />
-      <div className="flex justify-center">
-        <GoogleAd
-          adSlot={ADS.SECTION_BREAK_DISPLAY}
-          style={{
-            display: "block",
-            width: "100%",
-            maxWidth: "728px",
-            height: 90, textAlign: "center",
-          }}
-          format="auto"
-        />
-      </div>
       <Heading
         title={"Travels"}
         subtitle="Wanderlust stories, tips & destinations"
