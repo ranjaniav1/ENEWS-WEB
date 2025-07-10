@@ -65,18 +65,18 @@ export default function Home() {
         link="/categories-news/technology"
       />
       <LazyComponent component={Technology} />
-
-      <GoogleAd
-        adSlot={ADS.SECTION_BREAK_DISPLAY}
-        style={{
-          display: "block",
-          textAlign: "center",
-          margin: "40px auto",
-          width: "100%",
-          maxWidth: "728px",
-        }}
-        format="auto"
-      />
+      <div className="my-10 flex justify-center">
+        <GoogleAd
+          adSlot={ADS.SECTION_BREAK_DISPLAY}
+          style={{
+            display: "block",
+            width: "100%",
+            maxWidth: "728px",
+            height: 90, textAlign: "center",
+          }}
+          format="auto"
+        />
+      </div>
       <Heading
         title={"Travels"}
         subtitle="Wanderlust stories, tips & destinations"
@@ -84,7 +84,7 @@ export default function Home() {
         link="/categories-news/travel"
       />
       <LazyComponent component={Travels} />
-     
+
       <Heading
         title={"Breaking News"}
         subtitle="Urgent updates as events unfold"
