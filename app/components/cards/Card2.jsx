@@ -5,7 +5,7 @@ import FavoriteButton from "@/app/components/features/FavouriteButton";
 import { useThemeContext } from "@/app/context/ThemeContext";
 import { truncateText } from "@/app/utils/textUtils";
 
-const Card2 = ({ category, title, imageUrl, height, width, article }) => {
+const Card2 = ({ category, title, imageUrl, article,className }) => {
   const { themeData } = useThemeContext(article?._id);
   const { isArticleFavorite, toggleFavorite, loading } = useArticleLikes(
     article?._id
@@ -20,9 +20,9 @@ const Card2 = ({ category, title, imageUrl, height, width, article }) => {
 
   return (
     <div
-      className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer"
-      style={{ height: height || "300px", width: width || "100%" }}
-      // onClick={() => addHandleArticleClick(article)}
+      className={`relative overflow-hidden rounded-lg shadow-lg group cursor-pointer ${className}`}
+      style={{ width: "100%" }}
+    // onClick={() => addHandleArticleClick(article)}
     >
       {/* Background Image */}
       <img
@@ -51,7 +51,7 @@ const Card2 = ({ category, title, imageUrl, height, width, article }) => {
           className="text-sm md:text-lg  font-bold  mt-2 group-hover:text-red-500"
           style={{ color: themeData?.text?.card }}
         >
-          {truncateText(title,60)}
+          {truncateText(title, 60)}
         </div>
       </div>
     </div>
