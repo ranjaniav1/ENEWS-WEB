@@ -8,7 +8,7 @@ import { ADS } from "@/app/utils/adConfig";
 const NewsContent = ({ article }) => {
   const { themeData, config } = useThemeContext();
   const [fontSize, setFontSize] = useState(config.fontSizeBase);
-
+  const [showAd, setShowAd] = useState(false);
   // Split content into paragraphs (assuming <p> tags in HTML)
   const contentParagraphs = article.content?.split("</p>") || [];
 
@@ -32,13 +32,13 @@ const NewsContent = ({ article }) => {
             }}
             dangerouslySetInnerHTML={{ __html: para + "</p>" }}
           />
-          
+
           {/* Insert Ad after 1st paragraph */}
-          {index === 0 && (
+          {index === 0 && showAd &&(
             <GoogleAd
               adSlot={ADS.IN_ARTICLE_POPULAR}
-              style={{ display: "block", textAlign: "justify", margin: "20px 0" }}
-              format="fluid"
+              style={{ display: "block", textAlign: "center", margin: "20px auto" }}
+              format="fluid" onAdLoad={setShowAd}
             />
           )}
         </div>

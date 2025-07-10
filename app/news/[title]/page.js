@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Container, Grid } from "@mui/material";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import Breadcumps from "@/app/components/shared/Breadcrumbs";
 import { NewsDetailSkeleton } from "@/app/components/features/Skeleton";
 import NewsHeader from "@/app/components/news-detail/NewsHeader";
@@ -9,14 +9,11 @@ import NewsIcons from "@/app/components/news-detail/NewsIcons";
 import RelatedNews from "@/app/components/news-detail/RelatedNews";
 import CommentsDrawer from "@/app/components/news-detail/CommentDrawer";
 import NewsContent from "@/app/components/news-detail/NewsContent";
-import GoogleAd from "@/app/components/features/GoogleAd";
 import { useSingleArticles } from "@/app/utils/useSingleArticle";
-import { ADS } from "@/app/utils/adConfig";
 
 const NewsDetailPage = () => {
   const { title } = useParams();
   const { article: clickedArticle, loading, relatedArticles } = useSingleArticles(title);
-
   useEffect(() => {
     document.title = title ? `Enews - ${title} News ` : "Enews - Latest News";
   }, [title]);

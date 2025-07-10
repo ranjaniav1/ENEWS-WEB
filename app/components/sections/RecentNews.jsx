@@ -1,16 +1,14 @@
 "use client";
 import React from "react";
-import { Container, Grid } from "@mui/material";
+import { Container } from "@mui/material"; // Keep Container
 import Link from "next/link";
 import { RecentSkeleton } from "../features/Skeleton";
 import Card2 from "../cards/Card2";
 import Card1 from "../cards/Card1";
 import { useHomeContext } from "@/app/utils/useHome";
 
-
 const RecentNews = () => {
   const { homeData: news, loading } = useHomeContext();
-
 
   if (loading || !news.recentNews) {
     return <RecentSkeleton />;
@@ -20,9 +18,9 @@ const RecentNews = () => {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={2}>
-        {/* First Column - Left Side Large Card */}
-        <Grid item sm={9} xs={12}>
+      <div className="grid grid-cols-1 sm:grid-cols-12 gap-2">
+        {/* Left Column */}
+        <div className="sm:col-span-9">
           <Link href={`/news/${articles[0]?.slug}`}>
             <Card2
               article={articles[0]}
@@ -32,34 +30,23 @@ const RecentNews = () => {
               height="h-[550px] sm:h-[300px]"
             />
           </Link>
-        </Grid>
+        </div>
 
-        {/* Second Column - Right Side Small Cards */}
-        <Grid
-          item
-          xs={12}
-          sm={3}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        {/* Right Column */}
+        <div className="sm:col-span-3 flex flex-col gap-2">
           {articles.slice(1, 4).map((article) => (
-            <Link
-              key={article?._id}
-              href={`/news/${article.slug}`}
-            >
+            <Link key={article?._id} href={`/news/${article.slug}`}>
               <Card1
                 article={article}
                 category={article.category.name}
                 title={article.title}
                 imageUrl={article.image_url}
-                height="h-[210px] sm:h-[300px]"
+                className=" sm:h-[203px]"
               />
             </Link>
           ))}
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </Container>
   );
 };

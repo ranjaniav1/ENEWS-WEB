@@ -17,6 +17,7 @@ const CategoryPage = () => {
   const { title } = useParams();
   const { themeData } = useThemeContext();
   const { article, loading } = useArticleCollection(title);
+  const [showAd, setShowAd] = useState(false);
 
   const pageTitle = title ? `Enews - ${title} News` : "Enews - Latest News";
   const pageDescription = title
@@ -36,12 +37,15 @@ const CategoryPage = () => {
       </Head>
 
       <Breadcumps heading={title} />
-      <div className=" flex justify-center">
-        <GoogleAd
-          adSlot={ADS.HOME_BOTTOM_MULTIPLEX} // ✅ Display Banner slot
-          style={{ display: "inline-block", width: "100%", height: 90, textAligh: "center" }}
-        />
-      </div>
+      {showAd && (
+        <div className="flex justify-center my-2">
+          <GoogleAd
+            adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
+            style={{ display: "block", width: "100%", height: 90 }}
+            onAdLoad={setShowAd}
+          />
+        </div>
+      )}
       <Container maxWidth="xl" sx={{ py: 4 }}>
         {loading ? (
           <TravelSkeleton />
@@ -51,7 +55,7 @@ const CategoryPage = () => {
           </Typography>
         ) : (
           <Grid container spacing={2}>
-            {article.map((articleItem, index) => (
+            {article.map((articleItem) => (
               < React.Fragment key={articleItem._id}>
                 <Grid item xs={12} sm={6} md={3}>
                   <Link

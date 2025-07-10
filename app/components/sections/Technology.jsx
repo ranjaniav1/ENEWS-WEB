@@ -28,25 +28,20 @@ const Technology = () => {
     <Container maxWidth="xl">
       <NewsSlider slidesToShow={4}>
         {articles.map((article, index) => (
-          <Box key={index} px={1}> {/* ✅ Added spacing */}
-
-            {/* Add spacing between cards */}
-            <Link
-              href={`/news/${article?.slug}`}
-            >
-              <Card2
-                height="300px"
-                article={article}
-                category={article.category.name}
-                title={article.title}
-                imageUrl={article.image_url}
-              />
-            </Link>
-          </Box>
+          <Link key={index} href={`/news/${article?.slug}`}>
+            <Card2
+              height="300px"
+              article={article}
+              category={article.category.name}
+              title={article.title}
+              imageUrl={article.image_url}
+            />
+          </Link>
         ))}
       </NewsSlider>
 
-    </Container>
+
+    </Container >
   );
 };
 

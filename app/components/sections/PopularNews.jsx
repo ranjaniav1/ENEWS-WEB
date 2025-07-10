@@ -20,47 +20,46 @@ const PopularCards = () => {
 
   return (
     <Container maxWidth="xl">
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+      <div className="grid gap-2" style={{ gridTemplateColumns: "1fr 2fr 1fr" }}>
         {/* Left Side Cards */}
-        <div className="grid grid-cols-1 gap-y-2">
-          {articles.slice(0, 2).map((article, index) => (
-            <Link key={index} href={`/news/${article.slug}`}>
+        <div className="flex flex-col gap-2">
+          {articles.slice(0, 2).map((article) => (
+            <Link key={article._id} href={`/news/${article.slug}`}>
               <Card1
                 article={article}
                 category={article.category?.name}
                 title={article.title}
                 imageUrl={article.image_url}
-                height="h-[191px] sm:h-[300px]"
+                className="h-[245px]"
               />
             </Link>
           ))}
         </div>
 
         {/* Center Big Card */}
-        <div className="col-span-1 sm:col-span-2">
+        <div>
           <Link href={`/news/${articles[2].slug}`}>
-            <div className="flex flex-col min-h-[191px]">
-              <Card1
-                article={articles[2]}
-                category={articles[2].category?.name}
-                title={articles[2].title}
-                imageUrl={articles[2].image_url}
-                height="h-[405px] sm:h-[300px]"
-              />
-            </div>
+            <Card1
+              article={articles[2]}
+              category={articles[2].category?.name}
+              title={articles[2].title}
+              imageUrl={articles[2].image_url}
+              className="h-[500px]"
+            />
+
           </Link>
         </div>
 
         {/* Right Side Cards */}
-        <div className="grid grid-cols-1 gap-y-2">
-          {articles.slice(3, 5).map((article, index) => (
-            <Link key={index} href={`/news/${article.slug}`}>
+        <div className="flex flex-col gap-2">
+          {articles.slice(3, 5).map((article) => (
+            <Link key={article._id} href={`/news/${article.slug}`}>
               <Card1
                 article={article}
                 category={article.category?.name}
                 title={article.title}
                 imageUrl={article.image_url}
-                height="h-[191px] sm:h-[300px]"
+                className="h-[245px]"
               />
             </Link>
           ))}

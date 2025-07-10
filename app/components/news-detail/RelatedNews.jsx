@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Card4 from "@/app/components/cards/Card4";
 import { useThemeContext } from "@/app/context/ThemeContext";
@@ -7,6 +7,7 @@ import { ADS } from "@/app/utils/adConfig";
 
 const RelatedNews = ({ articles }) => {
   const { themeData } = useThemeContext()
+  const [showAd, setShowAd] = useState(false);
   return (
     <div>
       <div className="text-xs md:text-lg font-semibold px-3 py-1 rounded-lg mb-4" style={{
@@ -32,18 +33,21 @@ const RelatedNews = ({ articles }) => {
         )}
       </div>
       {/* Vertical Ad below articles */}
-      <div className="mt-6">
-        <GoogleAd
-          adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
-          style={{
-            display: "block",
-            width: "100%",
-            height: "auto",
-            textAlign: "center",
-          }}
-          format="autorelaxed" // Good for vertical multiplex ad
-        />
-      </div>
+      {showAd && (
+        <div className="mt-6">
+          <GoogleAd
+            adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              textAlign: "center",
+            }}
+            format="autorelaxed"
+            onLoad={setShowAd}
+          />
+        </div>
+      )}
     </div>
   );
 };

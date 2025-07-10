@@ -5,7 +5,7 @@ import FavoriteButton from "@/app/components/features/FavouriteButton";
 import { useThemeContext } from "@/app/context/ThemeContext";
 import { truncateText } from "@/app/utils/textUtils";
 
-const Card5 = ({ category, title, imageUrl, article, height }) => {
+const Card5 = ({ category, title, imageUrl, article, className }) => {
   const { themeData } = useThemeContext();
   const { isArticleFavorite, toggleFavorite, loading } = useArticleLikes(
     article?._id
@@ -18,8 +18,8 @@ const Card5 = ({ category, title, imageUrl, article, height }) => {
   return (
     <div className="relative overflow-hidden group">
       <div
-        className="relative w-full"
-        style={{ height: height }}
+        className={`relative w-full ${className}`}
+      
         // onClick={() => addHandleArticleClick(article)}
       >
         <img
