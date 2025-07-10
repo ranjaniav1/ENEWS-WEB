@@ -37,17 +37,15 @@ const CategoryPage = () => {
       </Head>
 
       <Breadcumps heading={title} />
-      <div className="flex justify-center my-2">
-        <GoogleAd
-          adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
-          style={{
-            display: showAd ? "block" : "none",
-            width: "100%",
-            height: 90,
-          }}
-          onAdLoad={(loaded) => setShowAd(loaded)}
-        />
-      </div>
+      {showAd && (
+        <div className="flex justify-center my-2">
+          <GoogleAd
+            adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
+            style={{ display: "block", width: "100%", height: 90 }}
+            onAdLoad={(loaded) => setShowAd(loaded)}
+          />
+        </div>
+      )}
 
       <Container maxWidth="xl" sx={{ py: 4 }}>
         {loading ? (
