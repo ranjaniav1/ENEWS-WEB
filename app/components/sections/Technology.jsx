@@ -30,7 +30,7 @@ const Technology = () => {
         {articles.map((article, index) => (
           <Link key={index} href={`/news/${article?.slug}`}>
             <Card2
-              height="300px"
+              className="h-[300px]"
               article={article}
               category={article.category.name}
               title={article.title}

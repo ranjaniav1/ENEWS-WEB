@@ -71,7 +71,7 @@ const CategoryPage = () => {
                       title={articleItem.title}
                       imageUrl={articleItem.image_url}
                       article={articleItem}
-                      height="250px"
+                      className="300px"
                     />
                   </Link>
                 </Grid>
