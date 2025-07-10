@@ -35,7 +35,13 @@ const CategoryPage = () => {
         <meta name="description" content={pageDescription} />
       </Head>
 
-    
+      <Breadcumps heading={title} />
+      <div className=" flex justify-center">
+        <GoogleAd
+          adSlot={ADS.HOME_BOTTOM_MULTIPLEX} // ✅ Display Banner slot
+          style={{ display: "inline-block", width: "100%", height: 90, textAligh: "center" }}
+        />
+      </div>
       <Container maxWidth="xl" sx={{ py: 4 }}>
         {loading ? (
           <TravelSkeleton />
@@ -45,7 +51,7 @@ const CategoryPage = () => {
           </Typography>
         ) : (
           <Grid container spacing={2}>
-            {article.map((articleItem,index) => (
+            {article.map((articleItem, index) => (
               < React.Fragment key={articleItem._id}>
                 <Grid item xs={12} sm={6} md={3}>
                   <Link
@@ -62,28 +68,15 @@ const CategoryPage = () => {
                     />
                   </Link>
                 </Grid>
-                {index > 0 && index % 4 === 0 && (
-                  <Grid item xs={12}>
-                    <GoogleAd
-                      adSlot={ADS.SECTION_BREAK_DISPLAY}
-                      style={{
-                        display: "block",
-                        textAlign: "center",
-                        margin: "30px 0",
-                      }}
-                      format="fluid"
-                    />
-                  </Grid>
-                )}
               </React.Fragment>
             ))}
           </Grid>
         )}
       </Container>
-     
-      </div>
 
-    
+    </div>
+
+
   );
 };
 
