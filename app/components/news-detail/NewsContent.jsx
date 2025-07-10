@@ -34,11 +34,11 @@ const NewsContent = ({ article }) => {
           />
 
           {/* Insert Ad after 1st paragraph */}
-          {index === 0 && showAd &&(
+          {index === 0 && (
             <GoogleAd
               adSlot={ADS.IN_ARTICLE_POPULAR}
-              style={{ display: "block", textAlign: "center", margin: "20px auto" }}
-              format="fluid" onAdLoad={setShowAd}
+              style={{ display: showAd ? "block" : "none", textAlign: "center", margin: "20px auto" }}
+              format="fluid" onAdLoad={(loaded) => setShowAd(loaded)}
             />
           )}
         </div>

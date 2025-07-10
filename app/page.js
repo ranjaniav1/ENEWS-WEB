@@ -10,8 +10,7 @@ import Technology from "./components/sections/Technology";
 import Travels from "./components/sections/Travels";
 import LazyComponent from "./components/shared/LazyComponent";
 import { useThemeContext } from "./context/ThemeContext";
-import GoogleAd from "./components/features/GoogleAd";
-import { ADS } from "./utils/adConfig";
+
 
 export default function Home() {
   const { themeData } = useThemeContext();
