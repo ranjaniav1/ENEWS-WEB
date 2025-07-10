@@ -33,21 +33,21 @@ const RelatedNews = ({ articles }) => {
         )}
       </div>
       {/* Vertical Ad below articles */}
-      {showAd && (
-        <div className="mt-6">
-          <GoogleAd
-            adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
-            style={{
-              display: "block",
-              width: "100%",
-              height: "auto",
-              textAlign: "center",
-            }}
-            format="autorelaxed"
-            onLoad={setShowAd}
-          />
-        </div>
-      )}
+
+      <div className="mt-6">
+        <GoogleAd
+          adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
+          style={{
+            display: showAd ? "block" : "none",
+            width: "100%",
+            height: "auto",
+            textAlign: "center",
+          }}
+          format="autorelaxed"
+          onLoad={(loaded) => setShowAd(loaded)}
+        />
+      </div>
+
     </div>
   );
 };

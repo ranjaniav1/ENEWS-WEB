@@ -17,7 +17,7 @@ const GoogleAd = ({ adSlot, style, format = "auto",onAdLoad }) => {
         if (onAdLoad) {
           onAdLoad(hasContent); // true if ad has content, false otherwise
         }
-      }, 1000);
+      }, 3000);
 
       return () => clearTimeout(timer);
     } catch (e) {
