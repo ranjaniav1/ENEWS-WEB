@@ -10,8 +10,6 @@ import Card5 from "@/app/components/cards/Card5";
 import Breadcumps from "@/app/components/shared/Breadcrumbs";
 import { useThemeContext } from "@/app/context/ThemeContext";
 import { useArticleCollection } from "@/app/utils/useArticleCollection";
-import GoogleAd from "@/app/components/features/GoogleAd";
-import { ADS } from "@/app/utils/adConfig";
 
 const CategoryPage = () => {
   const { title } = useParams();
@@ -36,12 +34,6 @@ const CategoryPage = () => {
       </Head>
 
       <Breadcumps heading={title} />
-      <div className="flex justify-center my-2">
-        <GoogleAd
-          adSlot={ADS.HOME_BOTTOM_MULTIPLEX}
-          style={{ display: "block", width: "100%", height: 90 }}
-        />
-      </div>
 
 
       <Container maxWidth="xl" sx={{ py: 4 }}>

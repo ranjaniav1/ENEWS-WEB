@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import Card5 from "@/app/components/cards/Card5";
 import FontSizeSlider from "./FontSlider";
 import { useThemeContext } from "@/app/context/ThemeContext";
-import GoogleAd from "@/app/components/features/GoogleAd";
-import { ADS } from "@/app/utils/adConfig";
+
 
 const NewsContent = ({ article }) => {
   const { themeData, config } = useThemeContext();
   const [fontSize, setFontSize] = useState(config.fontSizeBase);
-  // Split content into paragraphs (assuming <p> tags in HTML)
-  const contentParagraphs = article.content?.split("</p>") || [];
+
 
   return (
     <>
@@ -19,29 +17,6 @@ const NewsContent = ({ article }) => {
       {/* Font Size Slider */}
       <FontSizeSlider fontSize={fontSize} setFontSize={setFontSize} />
 
-      {/* News Content with In-Article Ad */}
-      {contentParagraphs.map((para, index) => (
-        <div key={index}>
-          <p
-            className="leading-7 mb-4"
-            style={{
-              fontSize: `${fontSize}px`,
-              color: themeData?.text?.primary,
-              lineHeight: "1.6",
-            }}
-            dangerouslySetInnerHTML={{ __html: para + "</p>" }}
-          />
-
-          {/* Insert Ad after 1st paragraph */}
-          {index === 0 && (
-            <GoogleAd
-              adSlot={ADS.IN_ARTICLE_POPULAR}
-              style={{ display: "block", textAlign: "center",  margin: "20px auto" }}
-              format="fluid" 
-            />
-          )}
-        </div>
-      ))}
 
       {/* Excerpt (optional summary) */}
       {article.excerpt && (

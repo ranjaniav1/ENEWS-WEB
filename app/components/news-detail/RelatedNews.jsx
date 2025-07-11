@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Card4 from "@/app/components/cards/Card4";
 import { useThemeContext } from "@/app/context/ThemeContext";
-import GoogleAd from "../features/GoogleAd";
-import { ADS } from "@/app/utils/adConfig";
 
 const RelatedNews = ({ articles }) => {
   const { themeData } = useThemeContext()
-  const [showAd, setShowAd] = useState(false);
   return (
     <div>
       <div className="text-xs md:text-lg font-semibold px-3 py-1 rounded-lg mb-4" style={{
@@ -32,20 +29,7 @@ const RelatedNews = ({ articles }) => {
           <p className="text-gray-500 text-center">No related articles found.</p>
         )}
       </div>
-      {/* Vertical Ad below articles */}
-
-      <div className="mt-6">
-        <GoogleAd
-          adSlot={ADS.NEWS_SIDEBAR_MULTIPLEX}
-          style={{
-            display: "block",
-            width: "100%",
-            height: "auto",
-            textAlign: "center",
-          }}
-          format="autorelaxed"
-        />
-      </div>
+   
 
     </div>
   );
