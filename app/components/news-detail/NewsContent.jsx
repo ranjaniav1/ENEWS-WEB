@@ -30,6 +30,18 @@ const NewsContent = ({ article }) => {
           dangerouslySetInnerHTML={{ __html: article.excerpt }}
         />
       )}
+      {/* Content*/}
+      {article.content && (
+        <p
+          className="mb-4"
+          style={{
+            fontSize: `${fontSize}px`,
+            color: themeData?.text?.secondary,
+            fontStyle: "italic",
+          }}
+          dangerouslySetInnerHTML={{ __html: article.content }}
+        />
+      )}
 
       {/* Keywords Section */}
       {article.tags?.length > 0 && (
