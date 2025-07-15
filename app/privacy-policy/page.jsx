@@ -1,54 +1,91 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { useThemeContext } from "../context/ThemeContext";
 
 export default function PrivacyPolicyPage() {
+  const { themeData } = useThemeContext();
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-4xl font-bold mb-6 text-gray-900">
+    <div
+      style={{
+        maxWidth: "64rem",
+        margin: "0 auto",
+        padding: "2.5rem 1rem",
+        color: themeData?.text?.primary,
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "2.25rem",
+          fontWeight: "bold",
+          marginBottom: "1.5rem",
+        }}
+      >
         Privacy Policy
       </h1>
 
-      <p className="text-gray-700 mb-4">
+      <p style={{ marginBottom: "1.25rem", color: themeData?.text?.secondary }}>
         At <strong>Enews Varsani</strong>, accessible from{" "}
-        <a href="https://enews-varsani.vercel.app" className="text-blue-600 underline">
+        <Link
+          href="https://enews-varsani.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: themeData?.text?.link || "#2563eb",
+            textDecoration: "underline",
+          }}
+        >
           enews-varsani.vercel.app
-        </a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document describes the types of information that is collected and recorded by Enews Varsani and how we use it.
+        </Link>
+        , one of our main priorities is the privacy of our visitors. This Privacy Policy document describes the types of information that is collected and recorded by Enews Varsani and how we use it.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-3">1. Log Files</h2>
-      <p className="text-gray-700 mb-4">
-        Enews Varsani follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. This data is not personally identifiable and is used for analyzing trends and administering the site.
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.75rem" }}>1. Log Files</h2>
+      <p style={{ marginBottom: "1.25rem", color: themeData?.text?.secondary }}>
+        Enews Varsani follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected includes IP addresses, browser type, ISP, date/time, and referring/exit pages. This data is used for analytics and site management.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-3">2. Cookies and Web Beacons</h2>
-      <p className="text-gray-700 mb-4">
-        Like any other website, Enews Varsani uses "cookies" to store information including visitors' preferences and the pages that the visitor accessed. This information is used to optimize user experience by customizing our content based on browser type or other information.
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.75rem" }}>2. Cookies and Web Beacons</h2>
+      <p style={{ marginBottom: "1.25rem", color: themeData?.text?.secondary }}>
+        Like any other website, Enews Varsani uses "cookies" to store information including visitor preferences and the pages they visit. This helps optimize user experience.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-3">3. Google AdSense</h2>
-      <p className="text-gray-700 mb-4">
-        Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of the DART cookie enables it to serve ads based on users' visits to our site and other websites on the Internet. You may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy.
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.75rem" }}>3. Google AdSense</h2>
+      <p style={{ marginBottom: "1.25rem", color: themeData?.text?.secondary }}>
+        Google, as a third-party vendor, uses cookies to serve ads on our site. Their use of the DART cookie enables ad targeting based on prior visits. You may opt out by visiting Google’s{" "}
+        <Link
+          href="https://policies.google.com/technologies/ads"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: themeData?.text?.link || "#2563eb",
+            textDecoration: "underline",
+          }}
+        >
+          Ads Privacy Policy
+        </Link>.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-3">4. Third-Party Privacy Policies</h2>
-      <p className="text-gray-700 mb-4">
-        Enews Varsani’s Privacy Policy does not apply to other advertisers or websites. We advise you to consult the respective privacy policies of third-party ad servers for more detailed information.
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.75rem" }}>4. Third-Party Privacy Policies</h2>
+      <p style={{ marginBottom: "1.25rem", color: themeData?.text?.secondary }}>
+        Enews Varsani’s Privacy Policy does not apply to other advertisers or websites. Please refer to their policies for detailed information.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-3">5. Children's Information</h2>
-      <p className="text-gray-700 mb-4">
-        We encourage parents and guardians to observe, participate in, or monitor and guide their online activity. Enews Varsani does not knowingly collect any Personal Identifiable Information from children under the age of 13.
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.75rem" }}>5. Children's Information</h2>
+      <p style={{ marginBottom: "1.25rem", color: themeData?.text?.secondary }}>
+        We do not knowingly collect personal information from children under 13. We encourage parents to monitor their children's internet activity.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-3">6. Consent</h2>
-      <p className="text-gray-700 mb-4">
-        By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.75rem" }}>6. Consent</h2>
+      <p style={{ marginBottom: "1.25rem", color: themeData?.text?.secondary }}>
+        By using our website, you consent to our Privacy Policy and agree to its terms.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-3">7. Updates</h2>
-      <p className="text-gray-700">
-        This Privacy Policy may be updated from time to time. Any changes will be posted on this page.
+      <h2 style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "0.75rem" }}>7. Updates</h2>
+      <p style={{ color: themeData?.text?.secondary }}>
+        We may update this policy occasionally. Changes will be posted on this page.
       </p>
     </div>
   );

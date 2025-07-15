@@ -27,11 +27,11 @@ const ThemeButton = () => {
   }
 
   return (
- <>
+    <>
       {/* Theme Switch Button */}
       <Icons
         onClick={handleClick}
-        icon={<ColorLensOutlined sx={{ color: themeData?.icon?.default }} />}
+        icon={<ColorLensOutlined />}
         sx={{
 
           background: themeData?.icon?.default,

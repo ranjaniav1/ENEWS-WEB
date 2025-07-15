@@ -1,25 +1,67 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { useThemeContext } from "../context/ThemeContext";
 
 export default function AboutPage() {
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-4xl font-bold mb-6 text-gray-900">
-        About Enews Varsani
-      </h1>
+  const { themeData } = useThemeContext();
 
-      <p className="text-lg text-gray-700 mb-6">
+  const containerStyle = {
+    maxWidth: "768px",
+    margin: "0 auto",
+    padding: "40px 16px",
+    color: themeData?.text?.primary,
+  };
+
+  const headingStyle = {
+    fontSize: "2.25rem",
+    fontWeight: "bold",
+    marginBottom: "1.5rem",
+    color: themeData?.text?.primary,
+  };
+
+  const sectionHeadingStyle = {
+    fontSize: "1.5rem",
+    fontWeight: "600",
+    marginTop: "2rem",
+    marginBottom: "1rem",
+    color: themeData?.text?.primary,
+  };
+
+  const paragraphStyle = {
+    fontSize: "1.125rem",
+    lineHeight: "1.75rem",
+    marginBottom: "1.5rem",
+    color: themeData?.text?.secondary,
+  };
+
+  const listStyle = {
+    paddingLeft: "1.5rem",
+    color: themeData?.text?.secondary,
+    marginBottom: "1.5rem",
+  };
+
+  const linkStyle = {
+    color: themeData?.text?.link || "#3b82f6",
+    textDecoration: "underline",
+  };
+
+  return (
+    <div style={containerStyle}>
+      <h1 style={headingStyle}>About Enews Varsani</h1>
+
+      <p style={paragraphStyle}>
         Welcome to <strong>Enews Varsani</strong> — your trusted digital destination for fresh, reliable, and trending news. Powered by modern technology and curated with care, we bring you stories that matter — from breaking headlines to in-depth coverage across categories.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h2>
-      <p className="text-gray-700 mb-6">
+      <h2 style={sectionHeadingStyle}>Our Mission</h2>
+      <p style={paragraphStyle}>
         Our mission is to empower readers with timely and accurate information across technology, entertainment, politics, and more. We strive to ensure unbiased reporting and a clean reading experience, making news accessible for everyone.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Why Choose Us?</h2>
-      <ul className="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+      <h2 style={sectionHeadingStyle}>Why Choose Us?</h2>
+      <ul style={listStyle}>
         <li>📰 Real-time, ad-safe news updates</li>
         <li>📱 Mobile-first design for smooth reading</li>
         <li>✅ Google AdSense-approved content policies</li>
@@ -27,17 +69,17 @@ export default function AboutPage() {
         <li>🔍 SEO-optimized articles for discoverability</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Who We Are</h2>
-      <p className="text-gray-700 mb-6">
+      <h2 style={sectionHeadingStyle}>Who We Are</h2>
+      <p style={paragraphStyle}>
         Enews Varsani is an independent web news platform created and maintained by passionate developers and content curators. We combine technical performance with editorial simplicity to deliver a no-clutter, content-rich experience for readers.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Stay Connected</h2>
-      <p className="text-gray-700">
+      <h2 style={sectionHeadingStyle}>Stay Connected</h2>
+      <p style={paragraphStyle}>
         We're constantly growing and open to feedback. For questions, partnerships, or contributions, feel free to{" "}
-        <a href="/contact" className="text-blue-600 underline">
+        <Link href="/contact" style={linkStyle}>
           contact us here
-        </a>.
+        </Link>.
       </p>
     </div>
   );

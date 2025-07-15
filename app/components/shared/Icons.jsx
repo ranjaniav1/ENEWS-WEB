@@ -16,7 +16,7 @@ const Icons = ({ onClick, icon, href, sx = {}, ariaLabel }) => {
         width: "35px",
         height: "35px",
         borderRadius: "50%",
-        color: themeData?.icon?.default,
+        color: themeData?.icon?.main,
         cursor: "pointer",
         textDecoration: "none",
         transition: "all 0.3s ease-in-out",

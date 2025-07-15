@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { sendContactMessage } from "../service/contact";
-
+import { useThemeContext } from "../context/ThemeContext";
 
 export default function ContactPage() {
+  const { themeData, config } = useThemeContext();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
@@ -28,51 +29,100 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-10">
-      <h1 className="text-4xl font-bold mb-6 text-gray-900">Contact Us</h1>
+    <div
+      style={{
+        maxWidth: "640px",
+        margin: "0 auto",
+        padding: "40px 16px",
+        color: themeData?.text?.primary,
+      }}
+    >
+      <h1 style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "1.5rem" }}>
+        Contact Us
+      </h1>
 
-      <p className="text-gray-700 mb-6">
+      <p style={{ marginBottom: "1.5rem", color: themeData?.text?.secondary }}>
         Have a question, suggestion, or business inquiry? Reach out to us and we’ll get back to you as soon as possible.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
         <div>
-          <label className="block text-gray-800 font-medium">Name</label>
+          <label style={{ display: "block", fontWeight: "500", marginBottom: "6px", color: themeData?.text?.primary }}>
+            Name
+          </label>
           <input
             type="text"
             name="name"
             required
             value={form.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
+            style={{
+              width: "100%",
+              color: themeData?.background?.button,
+              border: "1px solid #ccc",
+              borderRadius: config?.borderRadius,
+              padding: "10px",
+              fontSize: "1rem",
+            }}
           />
         </div>
+
         <div>
-          <label className="block text-gray-800 font-medium">Email</label>
+          <label style={{ display: "block", fontWeight: "500", marginBottom: "6px", color: themeData?.text?.primary }}>
+            Email
+          </label>
           <input
             type="email"
             name="email"
             required
             value={form.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
+            style={{
+              width: "100%",
+              color: themeData?.background?.button,
+              border: "1px solid #ccc",
+              borderRadius: config?.borderRadius,
+              padding: "10px",
+              fontSize: "1rem",
+            }}
           />
         </div>
+
         <div>
-          <label className="block text-gray-800 font-medium">Message</label>
+          <label style={{ display: "block", fontWeight: "500", marginBottom: "6px", color: themeData?.text?.primary }}>
+            Message
+          </label>
           <textarea
             name="message"
             rows={5}
             required
             value={form.message}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded px-4 py-2 mt-1"
+            style={{
+              width: "100%",
+              border: "1px solid #ccc",
+              color: themeData?.background?.button,
+              borderRadius: config?.borderRadius,
+              padding: "10px",
+              fontSize: "1rem",
+              resize: "vertical",
+            }}
           />
         </div>
+
         <button
           type="submit"
-          className="bg-blue-600 text-white font-semibold px-6 py-2 rounded hover:bg-blue-700"
           disabled={loading}
+          style={{
+            backgroundColor: themeData?.background?.button,
+            color: themeData?.text?.button,
+            fontWeight: "600",
+            padding: "10px 24px",
+            border: "none",
+            borderRadius: config?.borderRadius,
+            cursor: "pointer",
+            transition: "background 0.3s",
+          }}
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
