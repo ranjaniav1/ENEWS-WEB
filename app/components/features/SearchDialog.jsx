@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import {
   Dialog,
@@ -33,27 +34,46 @@ const SearchDialog = ({ open, onClose }) => {
       maxWidth="md"
       fullWidth
       sx={{
-        color: themeData?.text?.card,
+        "& .MuiPaper-root": {
+          backgroundColor: themeData?.background?.body,
+          color: themeData?.text?.primary,
+        },
       }}
     >
       <DialogTitle
-        className="flex justify-between items-center border-b pb-2"
         sx={{
-          background: themeData?.background?.secondary,
-          color: themeData?.navText,
+          backgroundColor: themeData?.background?.header,
+          color: themeData?.text?.heading,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          borderBottom: `1px solid ${themeData?.text?.border}`,
         }}
       >
-        <span className="text-xl font-semibold">Search News</span>
+        <span style={{ fontSize: "1.25rem", fontWeight: 600 }}>Search News</span>
         <IconButton
           onClick={onClose}
-          className=" hover:text-red-500"
-          style={{ color: themeData?.navText }}
+          sx={{
+            color: themeData?.icon?.default,
+            "&:hover": { color: themeData?.icon?.main },
+          }}
         >
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <DialogContent dividers sx={{ background: themeData?.background }}>
-        <div className="flex items-center bg-gray-100 p-2 rounded-lg">
+
+      <DialogContent dividers sx={{ background: themeData?.background?.body }}>
+        {/* Search Input Area */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: themeData?.background?.card,
+            border: `1px solid ${themeData?.text?.border}`,
+            borderRadius: 8,
+            padding: "0.5rem",
+          }}
+        >
           <InputBase
             autoFocus
             fullWidth
@@ -61,37 +81,64 @@ const SearchDialog = ({ open, onClose }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-            className="flex-1 px-3 text-gray-700 outline-none"
+            sx={{
+              px: 1,
+              color: themeData?.text?.primary,
+              fontSize: "1rem",
+            }}
           />
           <Button
             onClick={handleSearch}
             variant="contained"
-            color="error"
-            className="ml-2"
             disabled={loading}
+            sx={{
+              backgroundColor: themeData?.background?.button,
+              color: themeData?.text?.button,
+              minWidth: "40px",
+              "&:hover": {
+                backgroundColor: themeData?.icon?.main,
+              },
+            }}
           >
-            <SearchIcon className="text-white" />
+            <SearchIcon />
           </Button>
         </div>
+
+        {/* Loader */}
         {loading && searched ? (
-          <div className="flex justify-center items-center h-64">
-            <CircularProgress />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "12rem",
+            }}
+          >
+            <CircularProgress sx={{ color: themeData?.icon?.main }} />
           </div>
         ) : searched && news.length === 0 ? (
-          <p className="text-gray-500 text-center w-full mt-4">
+          <p
+            style={{
+              textAlign: "center",
+              color: themeData?.text?.secondary,
+              marginTop: "1rem",
+            }}
+          >
             No results found.
           </p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gap: "1rem",
+              marginTop: "1rem",
+            }}
+          >
             {news.map((article) => (
-              <Link
-                key={article._id}
-                href={`/news/${article.slug}`}
-              >
-
+              <Link key={article._id} href={`/news/${article.slug}`} passHref>
                 <Card4
                   article={article}
-                  key={article?._id}
                   title={article.title}
                   category={article.category?.name}
                   imageUrl={article.image_url}

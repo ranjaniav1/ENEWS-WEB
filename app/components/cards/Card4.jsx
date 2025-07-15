@@ -19,7 +19,7 @@ const Card4 = ({ imageUrl, category, title, article }) => {
   return (
     <div
       className="flex items-center  shadow-md rounded-md overflow-hidden mb-4 relative"
-      style={{ background: themeData?.background }}
+      style={{ background: themeData?.background,color: themeData?.text?.primary }}
       // onClick={() => addHandleArticleClick(article)}
     >
       {/* Left side image */}

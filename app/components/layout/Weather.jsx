@@ -48,10 +48,9 @@ const Weather = () => {
             fontWeight: "bold",
             borderRadius: config?.borderRadius,
             fontSize: "small",
-            padding: "3px",
+            padding: "5px",
           }}
         >
-          <Icons icon={<DateRangeOutlinedIcon fontSize="small" />} />
           <span>{getCurrentDate()}</span>
         </div>
 
@@ -62,27 +61,17 @@ const Weather = () => {
           </Link> */}
           <ThemeButton />
           <Icons
-            icon={<GitHubIcon sx={{ color: themeData.icon?.default }} />}
-            href="https://github.com/varsani2520/"
+            icon={<GitHubIcon  />}
+            href="https://github.com/ranjaniav1/"
             ariaLabel="Visit our GitHub page"
           />
           <Icons
-            icon={<FacebookIcon sx={{ color: themeData.icon?.default }} />}
-            href="https://www.facebook.com"
-            ariaLabel="Visit our Facebook page"
-          />
-          <Icons
-            icon={<TwitterIcon sx={{ color: themeData.icon?.default }} />}
-            href="https://x.com/RanjaniVar61457"
-            ariaLabel="Visit our Twitter page"
-          />
-          <Icons
-            icon={<LinkedInIcon sx={{ color: themeData.icon?.default }} />}
-            href="https://www.linkedin.com/in/ranjani-varsani-45a875225/"
+            icon={<LinkedInIcon/>}
+            href="https://www.linkedin.com/in/varsaniranjani"
             ariaLabel="Visit our LinkedIn profile"
           />
           <Icons
-            icon={<InstagramIcon sx={{ color: themeData.icon?.default }} />}
+            icon={<InstagramIcon/>}
             href="https://www.instagram.com/varsaniranjani/"
             ariaLabel="Visit our Instagram page"
           />

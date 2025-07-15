@@ -4,10 +4,9 @@ import { Typography, Divider } from "@mui/material";
 import Link from "next/link";
 import { useThemeContext } from "@/app/context/ThemeContext";
 import {
-  Facebook,
-  Twitter,
   Instagram,
   YouTube,
+  LinkedIn,
 } from "@mui/icons-material";
 
 const Footer = () => {
@@ -36,8 +35,8 @@ const Footer = () => {
           <Divider className="bg-gray-600 mb-2" />
           <ul className="space-y-2 text-sm text-gray-300">
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/categories-news/live-news">Live News</Link></li>
-            <li><Link href="/categories-news/breaking-news">Breaking News</Link></li>
+            <li><Link href="/categories-news/featured">Featured News</Link></li>
+            <li><Link href="/categories-news/breaking">Breaking News</Link></li>
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
@@ -64,17 +63,14 @@ const Footer = () => {
             Follow us on social media for daily updates and trending stories.
           </Typography>
           <div className="flex gap-4 text-white">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <Facebook className="hover:text-blue-500 transition" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
-              <Twitter className="hover:text-blue-400 transition" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://instagram.com/varsaniranjani" target="_blank" rel="noreferrer">
               <Instagram className="hover:text-pink-400 transition" />
             </a>
             <a href="https://youtube.com" target="_blank" rel="noreferrer">
               <YouTube className="hover:text-red-500 transition" />
+            </a>
+            <a href="https://linkedlin.com/varsaniranjani" target="_blank" rel="noreferrer">
+              <LinkedIn className="hover:text-blue-500 transition" />
             </a>
           </div>
         </div>
