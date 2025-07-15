@@ -14,11 +14,11 @@ const NewsSlider = ({ children, slidesToShow = 4 }) => {
       modules={[Autoplay]}
       spaceBetween={10}
       slidesPerView={slidesToShow}
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay: 5000,disableOnInteraction:false }}
       loop={true}
       breakpoints={{
         0: { slidesPerView: 1 },
-        600: { slidesPerView: 2 },
+        640: { slidesPerView: 2 },
         900: { slidesPerView: 3 },
         1200: { slidesPerView: slidesToShow },
       }}
