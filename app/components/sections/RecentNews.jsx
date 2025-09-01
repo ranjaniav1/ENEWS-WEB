@@ -24,9 +24,9 @@ const RecentNews = () => {
           <Link href={`/news/${articles[0]?.slug}`}>
             <Card2
               article={articles[0]}
-              category={articles[0].category.name}
-              title={articles[0].title}
-              imageUrl={articles[0].image_url}
+              category={articles[0]?.category?.name}
+              title={articles[0]?.title}
+              imageUrl={articles[0]?.image_url}
               className="h-[300px] md:h-[600px]"
             />
           </Link>
@@ -38,9 +38,9 @@ const RecentNews = () => {
             <Link key={article?._id} href={`/news/${article.slug}`}>
               <Card1
                 article={article}
-                category={article.category.name}
-                title={article.title}
-                imageUrl={article.image_url}
+                category={article?.category?.name}
+                title={article?.title}
+                imageUrl={article?.image_url}
                 className="h-[300px]sm:h-[95px] md:h-[195px]"
               />
             </Link>
