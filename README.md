@@ -1,32 +1,43 @@
-# 🚀 eNews Varsani – Stay Updated, Stay Informed! 📰
+# 🚀 Varsani DevBlog – Learn, Build, Grow 💻
 
-Welcome to **eNews Varsani**, your **one-stop destination for real-time news updates, trending stories, and in-depth analysis** across multiple categories.
+Welcome to **Varsani DevBlog**, a modern **developer-focused blogging platform** where you can explore real-world projects, learn full stack development, and improve your technical skills.
 
-🔗 **Live Demo**: [https://enews-varsani.vercel.app](https://enews-varsani.vercel.app)
+🔗 **Live Demo**: https://blog.ranjanivarsani.com 
 
 ---
 
 ## 🔥 Features
 
-✅ **Smart Search** – Quickly find the news that matters to you  
-✅ **Like & Bookmark** – Save your favorite articles for later  
-✅ **Comment & Engage** – Join discussions and share opinions  
-✅ **Social Sharing** – Instantly share news on **WhatsApp, Facebook, Twitter & more**  
-✅ **User Authentication** – Sign in with **email & password** for a personalized experience  
-✅ **Real-Time Updates** – Get the latest headlines instantly  
-✅ **Multiple Categories** – Politics, Business, Sports, Technology, Entertainment & more  
-✅ **Fully Responsive** – Works across mobile, tablet, and desktop devices
+- ✅ **Structured Tech Content** – Learn through well-organized development articles  
+- ✅ **Category & Subcategory System** – Backend, AI, DevOps, Programming & more  
+- ✅ **Smart Search & Filtering** – Find articles using tags, categories, and keywords  
+- ✅ **Like & Bookmark** – Save useful articles for later  
+- ✅ **Comment & Engage** – Share thoughts and interact with the community  
+- ✅ **Social Sharing** – Share articles on WhatsApp, Facebook, Twitter & more  
+- ✅ **User Authentication** – Secure login with email & password (JWT)  
+- ✅ **Admin Panel (CMS)** – Create, edit, and manage blog content  
+- ✅ **SEO Optimized** – Clean structure for better search visibility  
+- ✅ **Fully Responsive** – Works across mobile, tablet, and desktop  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Next.js (App Router), Tailwind CSS,Material UI  
-- **Database & Auth:** MongoDB ,JWT  
-- **API Communication:** Using dynamic `NEXT_PUBLIC_API_URL`  
-- **Deployment:** Vercel  
+### Frontend
+- **Next.js (App Router)**
+- **React**
+- **Tailwind CSS**
+- **Material UI**
 
----
+### Backend & Database
+- **MongoDB**
+- **JWT Authentication**
+
+### Architecture
+- **REST API**
+- Dynamic API handling using:
+```env
+NEXT_PUBLIC_API_URL=your_api_url
 
 ## 🚀 Installation & Setup
 
