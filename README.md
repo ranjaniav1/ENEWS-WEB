@@ -2,7 +2,7 @@
 
 Welcome to **Varsani DevBlog**, a modern **developer-focused blogging platform** where you can explore real-world projects, learn full stack development, and improve your technical skills.
 
-🔗 **Live Demo**: https://blog.ranjanivarsani.vercel.app  
+🔗 **Live Demo**: https://blog.ranjanivarsani.com 
 
 ---
 
