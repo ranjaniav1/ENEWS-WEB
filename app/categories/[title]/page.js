@@ -41,7 +41,7 @@ const CategoryPage = () => {
           <TravelSkeleton />
         ) : !article?.length ? (
           <Typography variant="h6" align="center" color="error">
-            No news articles found
+            No  articles found
           </Typography>
         ) : (
           <Grid container spacing={2}>
@@ -49,7 +49,7 @@ const CategoryPage = () => {
               < React.Fragment key={articleItem._id}>
                 <Grid item xs={12} sm={6} md={3}>
                   <Link
-                    href={`/news/${articleItem.slug}`}
+                    href={`/blog/${articleItem.slug}`}
                     aria-label={`Read article: ${articleItem.title}`}
                     passHref
                   >

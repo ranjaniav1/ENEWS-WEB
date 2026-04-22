@@ -39,7 +39,7 @@ const Header = () => {
           <div className="relative w-full overflow-hidden py-2">
             <div className="flex gap-10 animate-scroll whitespace-nowrap hover:pause-scroll">
               {categories?.map((category) => {
-                const categoryPath = `/categories-news/${category.slug}`;
+                const categoryPath = `/categories/${category.slug}`;
                 return (
                   <NavLink
                     key={category._id}

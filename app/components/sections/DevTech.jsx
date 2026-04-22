@@ -8,7 +8,7 @@ import Card2 from "../cards/Card2";
 import NewsSlider from "../features/Slider";
 import { useHomeContext } from "@/app/utils/useHome";
 
-const Technology = () => {
+const DevTech = () => {
   const { homeData: news, loading } = useHomeContext();
 
 
@@ -28,7 +28,7 @@ const Technology = () => {
     <Container maxWidth="xl">
       <NewsSlider slidesToShow={4}>
         {articles.map((article, index) => (
-          <Link key={index} href={`/news/${article?.slug}`}>
+          <Link key={index} href={`/blog/${article?.slug}`}>
             <Card2
               className="h-[300px]"
               article={article}
@@ -45,4 +45,4 @@ const Technology = () => {
   );
 };
 
-export default Technology;
+export default DevTech;

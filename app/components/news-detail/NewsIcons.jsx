@@ -58,7 +58,7 @@ const NewsIcons = ({ article, title }) => {
   };
 
   const handleShare = async () => {
-    const shareUrl = `${window.location.origin}/news/${article.slug}`;
+    const shareUrl = `${window.location.origin}/blog/${article.slug}`;
 
     try {
       if (navigator.share) {

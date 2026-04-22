@@ -16,7 +16,7 @@ const RelatedNews = ({ articles }) => {
       <div className="space-y-4">
         {articles.length > 0 ? (
           articles.map((article) => (
-            <Link href={`/news/${article.slug}`} key={article?._id}>
+            <Link href={`/blog/${article.slug}`} key={article?._id}>
               <Card4
                 article={article}
                 category={article.category?.name}

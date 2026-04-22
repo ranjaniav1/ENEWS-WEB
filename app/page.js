@@ -2,73 +2,74 @@
 
 import { useEffect } from "react";
 import Head from "next/head";
-import BreakingNews from "./components/sections/BreakingNews";
 import Heading from "./components/shared/Heading";
-import PopularCards from "./components/sections/PopularNews";
-import RecentNews from "./components/sections/RecentNews";
-import Technology from "./components/sections/Technology";
-import Travels from "./components/sections/Travels";
+
 import LazyComponent from "./components/shared/LazyComponent";
 import { useThemeContext } from "./context/ThemeContext";
+import TrendingArticles from "./components/sections/TrendingArticles";
+import LatestArticles from "./components/sections/LatestArticles";
+import DevTech from "./components/sections/DevTech";
+import BackendSection from "./components/sections/BackendSection";
+import FeaturedArticles from "./components/sections/FeaturedArtices";
 
 
 export default function Home() {
   const { themeData } = useThemeContext();
 
   useEffect(() => {
-    document.title = "Enews - Latest news & Updates";
+    document.title = "Varsani DevBlog | Learn Full Stack Development";
   }, []);
 
   return (
     <main className="flex flex-col justify-between" style={{ background: themeData?.background }}>
       <Head>
-        <title>Enews - Latest news & Updates</title>
+        <title>Varsani DevBlog | Full Stack Tutorials</title>
         <meta
           name="description"
-          content="Stay informed with Enews. Get the latest updates on popular, recent, tech, travel, and breaking news, 24/7."
+          content="Explore full stack development tutorials, Next.js guides, backend systems, and real-world coding projects."
         />
       </Head>
 
 
       <div className="hidden md:block">
         <Heading
-          title={"Popular News"}
-          subtitle="Top trending stories everyone is reading"
-          buttonText="Browse Popular Stories"
-          link="/categories-news/popular"
+          title={"Trending Tutorials"}
+          subtitle="Most popular guides developers are learning right now"
+          buttonText="Explore Trending Tutorials"
+          link="/categories/trending"
         />
       </div>
 
-      <LazyComponent component={PopularCards} />
+      <LazyComponent component={TrendingArticles} />
       <Heading
-        title={"Recent News"}
-        subtitle="Latest headlines and daily updates"
-        buttonText="Catch Up on Recent News"
-        link="/categories-news/recent"
+        title={"Latest Articles"}
+        subtitle="Fresh tutorials and development insights"
+        buttonText="View Latest Articles"
+        link="/categories/latest"
       />
-      <LazyComponent component={RecentNews} />
+      <LazyComponent component={LatestArticles} />
       <Heading
-        title={"Technology"}
-        subtitle="Stay ahead with innovations and gadgets"
-        buttonText="Explore Tech Innovations"
-        link="/categories-news/technology"
+        title={"Development & Tech"}
+        subtitle="Explore modern frameworks, tools, and technologies"
+        buttonText="Explore Technologies"
+        link="/categories/dev"
       />
-      <LazyComponent component={Technology} />
+      <LazyComponent component={DevTech} />
       <Heading
-        title={"Travels"}
-        subtitle="Wanderlust stories, tips & destinations"
-        buttonText="Discover Travel Articles"
-        link="/categories-news/travel"
+        title={"Backend & APIs"}
+        subtitle="Learn server-side development, APIs, and databases"
+        buttonText="Explore Backend"
+        link="/categories/backend"
       />
-      <LazyComponent component={Travels} />
+      <LazyComponent component={BackendSection} />
 
       <Heading
-        title={"Breaking News"}
-        subtitle="Urgent updates as events unfold"
-        buttonText={"Stay Updated on Breaking News"}
-        link="/categories-news/breaking"
+        title={"Featured Guides"}
+        subtitle="Handpicked in-depth tutorials for serious developers"
+        buttonText="View Featured Guides"
+        link="/categories/featured"
       />
-      <LazyComponent component={BreakingNews} />
+      <LazyComponent component={FeaturedArticles} />
     </main>
   );
 }

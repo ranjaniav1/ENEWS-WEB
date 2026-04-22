@@ -7,7 +7,7 @@ import { PopularSkeleton } from "../features/Skeleton";
 import Card1 from "../cards/Card1";
 import { useHomeContext } from "@/app/utils/useHome";
 
-const PopularCards = () => {
+const TrendingArticles = () => {
   const { homeData: news, loading } = useHomeContext();
   const popular = news?.popularNews;
 
@@ -23,7 +23,7 @@ const PopularCards = () => {
         {/* Left Side Cards */}
         <div className="col-span-12 sm:col-span-3 flex flex-col gap-2">
           {articles.slice(0, 2).map((article) => (
-            <Link key={article._id} href={`/news/${article.slug}`}>
+            <Link key={article._id} href={`/blog/${article.slug}`}>
               <Card1
                 article={article}
                 category={article.category?.name}
@@ -37,7 +37,7 @@ const PopularCards = () => {
 
         {/* Center Big Card */}
         <div className=" col-span-12 sm:col-span-6">
-          <Link href={`/news/${articles[2].slug}`}>
+          <Link href={`/blog/${articles[2].slug}`}>
             <Card1
               article={articles[2]}
               category={articles[2].category?.name}
@@ -51,7 +51,7 @@ const PopularCards = () => {
         {/* Right Side Cards */}
         <div className="col-span-12 sm:col-span-3 flex flex-col gap-2">
           {articles.slice(3, 5).map((article) => (
-            <Link key={article._id} href={`/news/${article.slug}`}>
+            <Link key={article._id} href={`/blog/${article.slug}`}>
               <Card1
                 article={article}
                 category={article.category?.name}
@@ -67,4 +67,4 @@ const PopularCards = () => {
   );
 };
 
-export default PopularCards;
+export default TrendingArticles;

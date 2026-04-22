@@ -8,7 +8,7 @@ import Card5 from "../cards/Card5";
 import NewsSlider from "../features/Slider";
 import { useHomeContext } from "@/app/utils/useHome";
 
-const BreakingNews = () => {
+const FeaturedArticles = () => {
   const { homeData: news, loading } = useHomeContext();
 
 
@@ -31,7 +31,7 @@ const BreakingNews = () => {
           <Grid container spacing={2} justifyContent="center" key={article._id}>
             <Grid item xs={12}>
               <Link
-                href={`/news/${article?.slug}`}
+                href={`/blog/${article?.slug}`}
               >
                 <Card5
                   article={article}
@@ -49,4 +49,4 @@ const BreakingNews = () => {
   );
 };
 
-export default BreakingNews;
+export default FeaturedArticles;

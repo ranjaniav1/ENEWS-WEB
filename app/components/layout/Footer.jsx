@@ -18,14 +18,14 @@ const Footer = () => {
         {/* Logo + About */}
         <div>
           <img
-            width="130"
             src={settings?.footerLogo || "/logo.png"}
             alt="logo"
-            className="mb-4 cursor-pointer"
+            className="h-10 w-auto object-contain cursor-pointer mb-4"
             onClick={() => window.location.href = "/"}
           />
           <Typography variant="body2" className="text-sm leading-relaxed text-gray-300">
-            Enews Varsani is your trusted platform for real-time and reliable news updates from around the globe — covering tech, politics, sports, health, and entertainment.
+            Varsani Tech Blog is a developer-focused platform sharing insights on
+            Frontend, Backend, APIs, Authentication, DevOps, and modern software engineering.
           </Typography>
         </div>
 
@@ -35,8 +35,8 @@ const Footer = () => {
           <Divider className="bg-gray-600 mb-2" />
           <ul className="space-y-2 text-sm text-gray-300">
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/categories-news/featured">Featured News</Link></li>
-            <li><Link href="/categories-news/breaking">Breaking News</Link></li>
+            <li><Link href="/categories/featured">Frontend Developement</Link></li>
+            <li><Link href="/categories/career-communication-learning">Learning News</Link></li>
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
@@ -47,11 +47,11 @@ const Footer = () => {
           <Typography variant="h6" className="text-lg font-semibold mb-4">Top Categories</Typography>
           <Divider className="bg-gray-600 mb-2" />
           <ul className="space-y-2 text-sm text-gray-300">
-            <li><Link href="/categories-news/technology">Technology</Link></li>
-            <li><Link href="/categories-news/politics">Politics</Link></li>
-            <li><Link href="/categories-news/sports">Sports</Link></li>
-            <li><Link href="/categories-news/health">Health</Link></li>
-            <li><Link href="/categories-news/business">Business</Link></li>
+            <li><Link href="/categories/backend-developement">Backend Developement</Link></li>
+            <li><Link href="/categories/artificial-intelligent">AI & AL</Link></li>
+            <li><Link href="/categories/mobile-development">Mobile Development</Link></li>
+            <li><Link href="/categories/programming-fundamental">Programming Fundamental</Link></li>
+            <li><Link href="/categories/devops-tools">DevOps</Link></li>
           </ul>
         </div>
 

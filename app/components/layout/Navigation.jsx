@@ -33,9 +33,10 @@ const Navigation = () => {
 
   const tabs = [
     { name: "Home", link: "/" },
-    { name: "Breaking News", link: "/categories-news/breaking" },
-    { name: "Featured News", link: "/categories-news/featured" },
-    { name: "Entertainment", link: "/categories-news/Entertainment" },
+    { name: "Tutorials", link: "/categories/frontend-development" },
+    { name: "Backend", link: "/categories/backend-development" },
+    { name: "AI & ML", link: "/categories/artificial-intelligence" },
+    { name: "DevOps", link: "/categories/devops-tools" }
   ];
 
   const handleSearchOpen = () => {
@@ -76,10 +77,9 @@ const Navigation = () => {
       <div className="flex justify-between items-center py-4">
         {/* Logo */}
         <img
-          width="120px"
           src={settings?.headerLogo}
           alt="logo"
-          className="cursor-pointer"
+          className="h-10 w-auto object-contain cursor-pointer"
           onClick={() => router.push("/")}
         />
 

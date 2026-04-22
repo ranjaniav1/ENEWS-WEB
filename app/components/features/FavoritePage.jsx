@@ -43,7 +43,7 @@ const {themeData}=useThemeContext()
             {currentFavorites.map((article) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={article?._id}>
                 <div className="relative h-full">
-                  <Link href={`/news/${article.slug}`} className="block">
+                  <Link href={`/blog/${article.slug}`} className="block">
                     <Card1
                       article={article}
                       category={article.category?.name}

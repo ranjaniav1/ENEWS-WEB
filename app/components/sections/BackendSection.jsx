@@ -7,7 +7,7 @@ import { TravelSkeleton } from "../features/Skeleton";
 import Card1 from "../cards/Card1";
 import { useHomeContext } from "@/app/utils/useHome";
 
-const Travels = () => {
+const BackendSection = () => {
   const { homeData: news, loading } = useHomeContext();
 
 
@@ -24,7 +24,7 @@ const Travels = () => {
         {articles.slice(0, 4).map((article) => (
           <Link
             key={article?._id}
-            href={`/news/${article.slug}`}
+            href={`/blog/${article.slug}`}
           >
             <Card1
               article={article}
@@ -40,4 +40,4 @@ const Travels = () => {
   );
 };
 
-export default Travels;
+export default BackendSection;

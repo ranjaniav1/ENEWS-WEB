@@ -7,7 +7,7 @@ import Card2 from "../cards/Card2";
 import Card1 from "../cards/Card1";
 import { useHomeContext } from "@/app/utils/useHome";
 
-const RecentNews = () => {
+const LatestArticles = () => {
   const { homeData: news, loading } = useHomeContext();
 
   if (loading || !news.recentNews) {
@@ -21,7 +21,7 @@ const RecentNews = () => {
       <div className="grid grid-cols-1 sm:grid-cols-12 gap-2">
         {/* Left Column */}
         <div className="sm:col-span-9">
-          <Link href={`/news/${articles[0]?.slug}`}>
+          <Link href={`/blog/${articles[0]?.slug}`}>
             <Card2
               article={articles[0]}
               category={articles[0]?.category?.name}
@@ -35,7 +35,7 @@ const RecentNews = () => {
         {/* Right Column */}
         <div className="sm:col-span-3 flex flex-col gap-2">
           {articles.slice(1, 4).map((article) => (
-            <Link key={article?._id} href={`/news/${article.slug}`}>
+            <Link key={article?._id} href={`/blog/${article.slug}`}>
               <Card1
                 article={article}
                 category={article?.category?.name}
@@ -51,4 +51,4 @@ const RecentNews = () => {
   );
 };
 
-export default RecentNews;
+export default  LatestArticles

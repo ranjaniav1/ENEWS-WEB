@@ -71,10 +71,12 @@ const NavigationDrawer = ({
 
         {/* Navigation Links */}
         {[
-          { name: "Home", href: "/" },
-          { name: "Breaking News", href: "/categories-news/breaking" },
-          { name: "Live News", href: "/categories-news/live" },
-          { name: "Entertainment", href: "/categories-news/Entertainment" },
+          { name: "Home", link: "/" },
+          { name: "Tutorials", link: "/categories/frontend-development" },
+          { name: "Backend", link: "/categories/backend-development" },
+          { name: "AI & ML", link: "/categories/artificial-intelligence" },
+          { name: "DevOps", link: "/categories/devops-tools" }
+
         ].map(({ name, href }) => (
           <ListItem key={name} className="px-2">
             <NavLink
@@ -132,7 +134,7 @@ const NavigationDrawer = ({
             ].map((category) => (
               <ListItem key={category} className="px-2">
                 <NavLink
-                  href={`/categories-news/${category.toLowerCase()}`}
+                  href={`/categories-blog/${category.toLowerCase()}`}
                   isActive={activeTab === category.toLowerCase()}
                   onClick={() => {
                     setActiveTab(category.toLowerCase());

@@ -136,7 +136,7 @@ const SearchDialog = ({ open, onClose }) => {
             }}
           >
             {news.map((article) => (
-              <Link key={article._id} href={`/news/${article.slug}`} passHref>
+              <Link key={article._id} href={`/blog/${article.slug}`} passHref>
                 <Card4
                   article={article}
                   title={article.title}
